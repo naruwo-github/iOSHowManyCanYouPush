@@ -130,12 +130,12 @@
         <!--Result Modal View Controller-->
         <scene sceneID="jda-He-9vJ">
             <objects>
-                <viewController id="b4I-gN-D1G" customClass="HPResultModalViewController" customModule="HowManyCanYouPush" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HPResultModalViewController" id="b4I-gN-D1G" customClass="HPResultModalViewController" customModule="HowManyCanYouPush" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Fh-tB-22S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="gUI-Kw-LR3"/>
-                        <color key="backgroundColor" white="1" alpha="0.30069784252669041" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFi-eW-Fcy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

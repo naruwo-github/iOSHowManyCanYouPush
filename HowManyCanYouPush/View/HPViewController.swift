@@ -17,6 +17,7 @@ class HPViewController: UIViewController {
     private var countDownTime: Float = 10.0
     private var tappedCount: Int = 0
     private var countRunningFlag = false
+    private var timerFunction: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +29,18 @@ class HPViewController: UIViewController {
     @IBAction private func pushButtonTapped(_ sender: Any) {
         if !self.countRunningFlag {
             self.countRunningFlag = true
-            Timer.scheduledTimer(timeInterval: 0.1, target: self, selector:#selector(timer) , userInfo: nil, repeats: true)
+            self.timerFunction = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector:#selector(timer) , userInfo: nil, repeats: true)
         }
-        if self.countDownTime > 0 {
-            self.tappedCount += 1
-            self.countingLabel.text = self.tappedCount.description
+        
+        if self.countRunningFlag {
+            if self.countDownTime > 0 {
+                self.tappedCount += 1
+                self.countingLabel.text = self.tappedCount.description
+                // 残り5秒未満になったらタップ数を？にする
+                if self.countDownTime < 5.0 {
+                    self.countingLabel.text = "?"
+                }
+            }
         }
     }
     
@@ -42,12 +50,21 @@ class HPViewController: UIViewController {
             let time = String(format: "%.1f", abs(self.countDownTime))
             self.countDownLabel.text = time.description
         } else {
-            // TODO: 終了and結果画面へ遷移
+            self.timerFunction?.invalidate()
+            self.countRunningFlag = false
+            
+            let resultVC = self.storyboard?.instantiateViewController(withIdentifier: "HPResultModalViewController") as! HPResultModalViewController
+            resultVC.setup(count: self.tappedCount, completion: { [unowned self] in
+                self.setupLabels()
+            })
+            self.present(resultVC, animated: true, completion: nil)
         }
     }
     
     private func setupLabels() {
+        self.countDownTime = 10.0
         self.countDownLabel.text = countDownTime.description
+        self.tappedCount = 0
         self.countingLabel.text = tappedCount.description
         let highestCount = UserDefaults.standard.integer(forKey: "score")
         self.highScoreLabel.text = "High Score: \(highestCount)"
