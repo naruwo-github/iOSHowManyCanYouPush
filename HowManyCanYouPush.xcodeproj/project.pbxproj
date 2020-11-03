@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		053015F32551145400FC5E5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053015F22551145400FC5E5C /* AppDelegate.swift */; };
 		053015F52551145400FC5E5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053015F42551145400FC5E5C /* SceneDelegate.swift */; };
-		053015F72551145400FC5E5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053015F62551145400FC5E5C /* ViewController.swift */; };
+		053015F72551145400FC5E5C /* HPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053015F62551145400FC5E5C /* HPViewController.swift */; };
 		053015FA2551145400FC5E5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053015F82551145400FC5E5C /* Main.storyboard */; };
 		053015FC2551145500FC5E5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 053015FB2551145500FC5E5C /* Assets.xcassets */; };
 		053015FF2551145500FC5E5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053015FD2551145500FC5E5C /* LaunchScreen.storyboard */; };
+		055DB89525511FD7000F9022 /* HPResultModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055DB89425511FD7000F9022 /* HPResultModalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		053015EF2551145400FC5E5C /* HowManyCanYouPush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowManyCanYouPush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		053015F22551145400FC5E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		053015F42551145400FC5E5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		053015F62551145400FC5E5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		053015F62551145400FC5E5C /* HPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPViewController.swift; sourceTree = "<group>"; };
 		053015F92551145400FC5E5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		053015FB2551145500FC5E5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		053015FE2551145500FC5E5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		053016002551145500FC5E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		055DB89425511FD7000F9022 /* HPResultModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPResultModalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +59,8 @@
 			isa = PBXGroup;
 			children = (
 				05301608255114D600FC5E5C /* View */,
-				05301609255114E800FC5E5C /* Helper */,
-				053015F22551145400FC5E5C /* AppDelegate.swift */,
-				053015F42551145400FC5E5C /* SceneDelegate.swift */,
+				05301609255114E800FC5E5C /* Start */,
 				053015FB2551145500FC5E5C /* Assets.xcassets */,
-				053015FD2551145500FC5E5C /* LaunchScreen.storyboard */,
 				053016002551145500FC5E5C /* Info.plist */,
 			);
 			path = HowManyCanYouPush;
@@ -70,17 +69,21 @@
 		05301608255114D600FC5E5C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				053015F62551145400FC5E5C /* ViewController.swift */,
+				053015F62551145400FC5E5C /* HPViewController.swift */,
 				053015F82551145400FC5E5C /* Main.storyboard */,
+				055DB89425511FD7000F9022 /* HPResultModalViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		05301609255114E800FC5E5C /* Helper */ = {
+		05301609255114E800FC5E5C /* Start */ = {
 			isa = PBXGroup;
 			children = (
+				053015F22551145400FC5E5C /* AppDelegate.swift */,
+				053015F42551145400FC5E5C /* SceneDelegate.swift */,
+				053015FD2551145500FC5E5C /* LaunchScreen.storyboard */,
 			);
-			path = Helper;
+			path = Start;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,7 +156,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				053015F72551145400FC5E5C /* ViewController.swift in Sources */,
+				053015F72551145400FC5E5C /* HPViewController.swift in Sources */,
+				055DB89525511FD7000F9022 /* HPResultModalViewController.swift in Sources */,
 				053015F32551145400FC5E5C /* AppDelegate.swift in Sources */,
 				053015F52551145400FC5E5C /* SceneDelegate.swift in Sources */,
 			);
