@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: - 結果モーダル画面クラス
 class HPResultModalViewController: UIViewController {
     
     private var dismissCompletion: (() -> Void)?
@@ -20,6 +21,8 @@ class HPResultModalViewController: UIViewController {
     private var tappedCount: Int = 0
     private let highScore = UserDefaults.standard.integer(forKey: "score")
     
+    // MARK: - ライフサイクル
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,7 +33,7 @@ class HPResultModalViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.saveHighScore()
+        self.saveHighScoreAndShowAnimation()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -39,14 +42,20 @@ class HPResultModalViewController: UIViewController {
         self.dismissCompletion?()
     }
     
+    // MARK: - イベント
+    
     @IBAction private func closeButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    // MARK: - パブリック関数
     
     public func setup(count: Int, completion: @escaping (() -> Void)) {
         self.tappedCount = count
         self.dismissCompletion = completion
     }
+    
+    // MARK: - プライベート関数
     
     private func setupButton() {
         self.closeButton.layer.cornerRadius = 15
@@ -65,10 +74,14 @@ class HPResultModalViewController: UIViewController {
         
         self.tappedCountLabel.text = self.tappedCount.description
         
-        self.preHighScoreLabel.text = "Your best score is \(self.highScore)."
+        if self.highScore < self.tappedCount {
+            self.preHighScoreLabel.text = "Your best score was \(self.highScore)."
+        } else {
+            self.preHighScoreLabel.text = "Your best score is \(self.highScore)."
+        }
     }
     
-    private func saveHighScore() {
+    private func saveHighScoreAndShowAnimation() {
         if self.highScore < self.tappedCount {
             self.showUpdateRecordView()
             UserDefaults.standard.set(self.tappedCount, forKey: "score")

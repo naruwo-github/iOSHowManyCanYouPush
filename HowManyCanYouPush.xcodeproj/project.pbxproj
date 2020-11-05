@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,9 +14,18 @@
 		053015FC2551145500FC5E5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 053015FB2551145500FC5E5C /* Assets.xcassets */; };
 		053015FF2551145500FC5E5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053015FD2551145500FC5E5C /* LaunchScreen.storyboard */; };
 		055DB89525511FD7000F9022 /* HPResultModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055DB89425511FD7000F9022 /* HPResultModalViewController.swift */; };
+		0581A2EC2553D50600AA2354 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0581A2EB2553D50600AA2354 /* GoogleService-Info.plist */; };
+		67C2AFB70153AF4592C3C749 /* Pods_HowManyCanYouPush.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EFB853A895382CA33C4C90 /* Pods_HowManyCanYouPush.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		051DE80A2553E85E008CE6B7 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "../../../Downloads/GoogleMobileAdsSdkiOS-7.68.0/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
+		051DE80E2553E872008CE6B7 /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = "../../../Downloads/GoogleMobileAdsSdkiOS-7.68.0/GoogleAppMeasurement.framework"; sourceTree = "<group>"; };
+		051DE8112553E890008CE6B7 /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = nanopb.xcframework; path = "../../../Downloads/GoogleMobileAdsSdkiOS-7.68.0/nanopb.xcframework"; sourceTree = "<group>"; };
+		051DE8142553E8A1008CE6B7 /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleUtilities.xcframework; path = "../../../Downloads/GoogleMobileAdsSdkiOS-7.68.0/GoogleUtilities.xcframework"; sourceTree = "<group>"; };
+		051DE8172553E91C008CE6B7 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../../../Downloads/GoogleMobileAdsSdkiOS-7.68.0/GoogleMobileAds.xcframework/ios-armv7_arm64/GoogleMobileAds.framework"; sourceTree = "<group>"; };
+		051DE81A2553E92A008CE6B7 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = "../../../Downloads/GoogleMobileAdsSdkiOS-7.68.0/GoogleUtilities.xcframework/ios-armv7_arm64/GoogleUtilities.framework"; sourceTree = "<group>"; };
+		051DE81D2553E936008CE6B7 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = "../../../Downloads/GoogleMobileAdsSdkiOS-7.68.0/nanopb.xcframework/ios-armv7_arm64/nanopb.framework"; sourceTree = "<group>"; };
 		053015EF2551145400FC5E5C /* HowManyCanYouPush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowManyCanYouPush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		053015F22551145400FC5E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		053015F42551145400FC5E5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +35,10 @@
 		053015FE2551145500FC5E5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		053016002551145500FC5E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		055DB89425511FD7000F9022 /* HPResultModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPResultModalViewController.swift; sourceTree = "<group>"; };
+		0581A2EB2553D50600AA2354 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4E3DB4E93818AFF569318FE3 /* Pods-HowManyCanYouPush.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HowManyCanYouPush.release.xcconfig"; path = "Target Support Files/Pods-HowManyCanYouPush/Pods-HowManyCanYouPush.release.xcconfig"; sourceTree = "<group>"; };
+		B0EFB853A895382CA33C4C90 /* Pods_HowManyCanYouPush.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HowManyCanYouPush.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B93E7C1537FE63ECAC087AEB /* Pods-HowManyCanYouPush.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HowManyCanYouPush.debug.xcconfig"; path = "Target Support Files/Pods-HowManyCanYouPush/Pods-HowManyCanYouPush.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67C2AFB70153AF4592C3C749 /* Pods_HowManyCanYouPush.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +58,8 @@
 			children = (
 				053015F12551145400FC5E5C /* HowManyCanYouPush */,
 				053015F02551145400FC5E5C /* Products */,
+				51CB938AF36C2C94D57C43A9 /* Pods */,
+				E82C0369F6A432CFF69902AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +78,7 @@
 				05301609255114E800FC5E5C /* Start */,
 				053015FB2551145500FC5E5C /* Assets.xcassets */,
 				053016002551145500FC5E5C /* Info.plist */,
+				0581A2EB2553D50600AA2354 /* GoogleService-Info.plist */,
 			);
 			path = HowManyCanYouPush;
 			sourceTree = "<group>";
@@ -86,6 +103,30 @@
 			path = Start;
 			sourceTree = "<group>";
 		};
+		51CB938AF36C2C94D57C43A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B93E7C1537FE63ECAC087AEB /* Pods-HowManyCanYouPush.debug.xcconfig */,
+				4E3DB4E93818AFF569318FE3 /* Pods-HowManyCanYouPush.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E82C0369F6A432CFF69902AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				051DE81D2553E936008CE6B7 /* nanopb.framework */,
+				051DE81A2553E92A008CE6B7 /* GoogleUtilities.framework */,
+				051DE8172553E91C008CE6B7 /* GoogleMobileAds.framework */,
+				051DE8142553E8A1008CE6B7 /* GoogleUtilities.xcframework */,
+				051DE8112553E890008CE6B7 /* nanopb.xcframework */,
+				051DE80E2553E872008CE6B7 /* GoogleAppMeasurement.framework */,
+				051DE80A2553E85E008CE6B7 /* GoogleMobileAds.xcframework */,
+				B0EFB853A895382CA33C4C90 /* Pods_HowManyCanYouPush.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -93,9 +134,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 053016032551145500FC5E5C /* Build configuration list for PBXNativeTarget "HowManyCanYouPush" */;
 			buildPhases = (
+				A30EA3C712FDB4731E3C231C /* [CP] Check Pods Manifest.lock */,
 				053015EB2551145400FC5E5C /* Sources */,
 				053015EC2551145400FC5E5C /* Frameworks */,
 				053015ED2551145400FC5E5C /* Resources */,
+				83620C4188A780D370EF79C2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,12 +187,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				053015FF2551145500FC5E5C /* LaunchScreen.storyboard in Resources */,
+				0581A2EC2553D50600AA2354 /* GoogleService-Info.plist in Resources */,
 				053015FC2551145500FC5E5C /* Assets.xcassets in Resources */,
 				053015FA2551145400FC5E5C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		83620C4188A780D370EF79C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HowManyCanYouPush/Pods-HowManyCanYouPush-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HowManyCanYouPush/Pods-HowManyCanYouPush-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HowManyCanYouPush/Pods-HowManyCanYouPush-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A30EA3C712FDB4731E3C231C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HowManyCanYouPush-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		053015EB2551145400FC5E5C /* Sources */ = {
@@ -303,6 +389,7 @@
 		};
 		053016042551145500FC5E5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B93E7C1537FE63ECAC087AEB /* Pods-HowManyCanYouPush.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -322,6 +409,7 @@
 		};
 		053016052551145500FC5E5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E3DB4E93818AFF569318FE3 /* Pods-HowManyCanYouPush.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

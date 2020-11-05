@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>202025462412-40918b8rfnksv5kt7erqs796af839p8s.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.202025462412-40918b8rfnksv5kt7erqs796af839p8s</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAfWdNUFvFXyzw9UnB-ffMthWNAldFpVZY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>202025462412</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.kero0711tennis.HowManyCanYouPush</string>
+	<key>PROJECT_ID</key>
+	<string>myios-40ef0</string>
+	<key>STORAGE_BUCKET</key>
+	<string>myios-40ef0.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:202025462412:ios:190ab05c5bcc796f2a69a9</string>
+	<key>DATABASE_URL</key>
+	<string>https://myios-40ef0.firebaseio.com</string>
+</dict>
+</plist>

@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2v-EP-xJl" userLabel="Top Ad View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scu-lX-2zj" userLabel="Content View">
                                 <rect key="frame" x="0.0" y="50" width="375" height="567"/>
                                 <subviews>
@@ -64,9 +67,10 @@
                                         <rect key="frame" x="0.0" y="453.5" width="375" height="113.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVG-zb-8GQ" userLabel="Push Button">
-                                                <rect key="frame" x="131" y="0.0" width="113" height="113.5"/>
+                                                <rect key="frame" x="117.5" y="-13" width="140" height="140"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="width" constant="140" id="BbO-Yg-Kmf"/>
                                                     <constraint firstAttribute="width" secondItem="kVG-zb-8GQ" secondAttribute="height" multiplier="1:1" id="Ykb-rE-q1A"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
@@ -81,7 +85,6 @@
                                         <constraints>
                                             <constraint firstItem="kVG-zb-8GQ" firstAttribute="centerY" secondItem="hVf-7h-0gV" secondAttribute="centerY" id="Fr2-ea-fQd"/>
                                             <constraint firstItem="kVG-zb-8GQ" firstAttribute="centerX" secondItem="hVf-7h-0gV" secondAttribute="centerX" id="WcD-gN-kgF"/>
-                                            <constraint firstItem="kVG-zb-8GQ" firstAttribute="top" secondItem="hVf-7h-0gV" secondAttribute="top" id="Xcv-we-jta"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -104,9 +107,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="scu-lX-2zj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="EhW-Sq-f9a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v2v-EP-xJl" secondAttribute="trailing" id="9ve-5I-cWJ"/>
+                            <constraint firstItem="scu-lX-2zj" firstAttribute="top" secondItem="v2v-EP-xJl" secondAttribute="top" constant="50" id="EhW-Sq-f9a"/>
+                            <constraint firstItem="scu-lX-2zj" firstAttribute="top" secondItem="v2v-EP-xJl" secondAttribute="bottom" id="GQI-IZ-5JZ"/>
                             <constraint firstItem="scu-lX-2zj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="M5z-Pb-nJL"/>
+                            <constraint firstItem="v2v-EP-xJl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Plv-v6-Rcf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="scu-lX-2zj" secondAttribute="trailing" id="Y9k-rL-fA7"/>
+                            <constraint firstItem="v2v-EP-xJl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nbq-6J-9Fw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="scu-lX-2zj" secondAttribute="bottom" constant="50" id="t6Q-19-S8W"/>
                         </constraints>
                     </view>
@@ -115,6 +122,7 @@
                         <outlet property="countingLabel" destination="dEr-Sv-PDe" id="oBd-14-1Nm"/>
                         <outlet property="highScoreLabel" destination="0AA-Cs-h2x" id="ITY-XE-N1K"/>
                         <outlet property="pushButton" destination="kVG-zb-8GQ" id="slY-w0-lgI"/>
+                        <outlet property="topAdView" destination="v2v-EP-xJl" id="xB0-hf-iFh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -165,9 +173,9 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your best score is 48" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idj-bm-icf" userLabel="Pre High Score Label">
-                                        <rect key="frame" x="55.5" y="257.5" width="184.5" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your best score is 48." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Idj-bm-icf" userLabel="Pre High Score Label">
+                                        <rect key="frame" x="32.5" y="237.5" width="230.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -194,12 +202,13 @@
                                 <constraints>
                                     <constraint firstItem="zqj-uJ-Vmx" firstAttribute="centerY" secondItem="0iM-15-xc2" secondAttribute="centerY" id="2e0-5G-gbL"/>
                                     <constraint firstItem="p8a-f6-gV9" firstAttribute="top" secondItem="0iM-15-xc2" secondAttribute="top" constant="20" id="2wv-TI-T7Z"/>
+                                    <constraint firstItem="Idj-bm-icf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0iM-15-xc2" secondAttribute="leading" constant="20" id="7FP-Kb-uI7"/>
                                     <constraint firstItem="p8a-f6-gV9" firstAttribute="width" secondItem="0iM-15-xc2" secondAttribute="width" multiplier="0.45" id="7ds-HO-OSj"/>
                                     <constraint firstItem="zqj-uJ-Vmx" firstAttribute="centerX" secondItem="0iM-15-xc2" secondAttribute="centerX" id="8Jp-mq-dBI"/>
                                     <constraint firstItem="zqj-uJ-Vmx" firstAttribute="top" secondItem="p8a-f6-gV9" secondAttribute="bottom" constant="-20" id="BUT-sk-XWA"/>
                                     <constraint firstAttribute="width" secondItem="0iM-15-xc2" secondAttribute="height" multiplier="1:1" id="VPq-Xy-M13"/>
                                     <constraint firstAttribute="trailing" secondItem="p8a-f6-gV9" secondAttribute="trailing" constant="30" id="ds2-3e-3QF"/>
-                                    <constraint firstItem="Idj-bm-icf" firstAttribute="top" secondItem="zqj-uJ-Vmx" secondAttribute="bottom" constant="20" id="jPq-Vu-3dG"/>
+                                    <constraint firstItem="Idj-bm-icf" firstAttribute="top" secondItem="zqj-uJ-Vmx" secondAttribute="bottom" id="jPq-Vu-3dG"/>
                                     <constraint firstItem="Idj-bm-icf" firstAttribute="centerX" secondItem="0iM-15-xc2" secondAttribute="centerX" id="sDi-Vi-zHO"/>
                                 </constraints>
                             </view>
