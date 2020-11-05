@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class HPViewController: UIViewController {
 
@@ -18,6 +19,7 @@ class HPViewController: UIViewController {
     private var tappedCount: Int = 0
     private var countRunningFlag = false
     private var timerFunction: Timer?
+    private var soundID: SystemSoundID = 1104
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,8 @@ class HPViewController: UIViewController {
     }
 
     @IBAction private func pushButtonTapped(_ sender: Any) {
+        self.playTappedSound()
+        
         if !self.countRunningFlag {
             self.countRunningFlag = true
             self.timerFunction = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector:#selector(timer) , userInfo: nil, repeats: true)
@@ -79,6 +83,13 @@ class HPViewController: UIViewController {
         self.pushButton.layer.shadowColor = UIColor.black.cgColor
         self.pushButton.layer.shadowRadius = 4.0
         self.pushButton.layer.shadowOpacity = 0.4
+    }
+    
+    private func playTappedSound() {
+        if let soundUrl = CFBundleCopyResourceURL(CFBundleGetMainBundle(), nil, nil, nil) {
+            AudioServicesCreateSystemSoundID(soundUrl, &soundID)
+            AudioServicesPlaySystemSound(soundID)
+        }
     }
     
 }
