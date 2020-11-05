@@ -8,9 +8,15 @@
 import UIKit
 import AVFoundation
 
-// MARK: - スタート画面＝PUSHボタン画面クラス
-class HPViewController: UIViewController {
+import GoogleMobileAds
 
+// MARK: - スタート画面＝PUSHボタン画面クラス
+class HPViewController: UIViewController, GADBannerViewDelegate {
+
+    private let TOP_BANNER_ID = "ca-app-pub-6492692627915720/4410584383"
+    private let topBannerView = GADBannerView(adSize: kGADAdSizeBanner)
+    @IBOutlet private weak var topAdView: UIView!
+    
     @IBOutlet private weak var countDownLabel: UILabel!
     @IBOutlet private weak var countingLabel: UILabel!
     @IBOutlet private weak var highScoreLabel: UILabel!
@@ -26,6 +32,7 @@ class HPViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupAd()
         
         self.setupLabels()
         self.setupButton()
@@ -72,6 +79,15 @@ class HPViewController: UIViewController {
         }
     }
     
+    private func setupAd() {
+        self.topBannerView.adUnitID = self.TOP_BANNER_ID
+        self.topBannerView.load(GADRequest())
+        self.topBannerView.center.x = self.view.center.x
+        self.topBannerView.delegate = self
+        self.topBannerView.rootViewController = self
+        self.topAdView.addSubview(self.topBannerView)
+    }
+
     private func setupLabels() {
         self.countDownTime = 10.0
         self.countDownLabel.text = countDownTime.description

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		051DE80A2553E85E008CE6B7 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "../../../Downloads/GoogleMobileAdsSdkiOS-7.68.0/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
+		051DE80E2553E872008CE6B7 /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = "../../../Downloads/GoogleMobileAdsSdkiOS-7.68.0/GoogleAppMeasurement.framework"; sourceTree = "<group>"; };
+		051DE8112553E890008CE6B7 /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = nanopb.xcframework; path = "../../../Downloads/GoogleMobileAdsSdkiOS-7.68.0/nanopb.xcframework"; sourceTree = "<group>"; };
+		051DE8142553E8A1008CE6B7 /* GoogleUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleUtilities.xcframework; path = "../../../Downloads/GoogleMobileAdsSdkiOS-7.68.0/GoogleUtilities.xcframework"; sourceTree = "<group>"; };
+		051DE8172553E91C008CE6B7 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../../../Downloads/GoogleMobileAdsSdkiOS-7.68.0/GoogleMobileAds.xcframework/ios-armv7_arm64/GoogleMobileAds.framework"; sourceTree = "<group>"; };
+		051DE81A2553E92A008CE6B7 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = "../../../Downloads/GoogleMobileAdsSdkiOS-7.68.0/GoogleUtilities.xcframework/ios-armv7_arm64/GoogleUtilities.framework"; sourceTree = "<group>"; };
+		051DE81D2553E936008CE6B7 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = "../../../Downloads/GoogleMobileAdsSdkiOS-7.68.0/nanopb.xcframework/ios-armv7_arm64/nanopb.framework"; sourceTree = "<group>"; };
 		053015EF2551145400FC5E5C /* HowManyCanYouPush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowManyCanYouPush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		053015F22551145400FC5E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		053015F42551145400FC5E5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,13 +109,19 @@
 				B93E7C1537FE63ECAC087AEB /* Pods-HowManyCanYouPush.debug.xcconfig */,
 				4E3DB4E93818AFF569318FE3 /* Pods-HowManyCanYouPush.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		E82C0369F6A432CFF69902AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				051DE81D2553E936008CE6B7 /* nanopb.framework */,
+				051DE81A2553E92A008CE6B7 /* GoogleUtilities.framework */,
+				051DE8172553E91C008CE6B7 /* GoogleMobileAds.framework */,
+				051DE8142553E8A1008CE6B7 /* GoogleUtilities.xcframework */,
+				051DE8112553E890008CE6B7 /* nanopb.xcframework */,
+				051DE80E2553E872008CE6B7 /* GoogleAppMeasurement.framework */,
+				051DE80A2553E85E008CE6B7 /* GoogleMobileAds.xcframework */,
 				B0EFB853A895382CA33C4C90 /* Pods_HowManyCanYouPush.framework */,
 			);
 			name = Frameworks;
