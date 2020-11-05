@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 
+// MARK: - スタート画面＝PUSHボタン画面クラス
 class HPViewController: UIViewController {
 
     @IBOutlet private weak var countDownLabel: UILabel!
@@ -21,6 +22,8 @@ class HPViewController: UIViewController {
     private var timerFunction: Timer?
     private var soundID: SystemSoundID = 1104
     
+    // MARK: - ライフサイクル
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +31,8 @@ class HPViewController: UIViewController {
         self.setupButton()
     }
 
+    // MARK: - イベント
+    
     @IBAction private func pushButtonTapped(_ sender: Any) {
         self.playTappedSound()
         
@@ -47,6 +52,8 @@ class HPViewController: UIViewController {
             }
         }
     }
+    
+    // MARK: - プライベート関数
     
     @objc private func timer() {
         if self.countDownTime > 0.0 {

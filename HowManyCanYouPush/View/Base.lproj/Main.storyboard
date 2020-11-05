@@ -165,9 +165,9 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your best score is 48" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idj-bm-icf" userLabel="Pre High Score Label">
-                                        <rect key="frame" x="55.5" y="257.5" width="184.5" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your best score is 48." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Idj-bm-icf" userLabel="Pre High Score Label">
+                                        <rect key="frame" x="32.5" y="237.5" width="230.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -194,12 +194,13 @@
                                 <constraints>
                                     <constraint firstItem="zqj-uJ-Vmx" firstAttribute="centerY" secondItem="0iM-15-xc2" secondAttribute="centerY" id="2e0-5G-gbL"/>
                                     <constraint firstItem="p8a-f6-gV9" firstAttribute="top" secondItem="0iM-15-xc2" secondAttribute="top" constant="20" id="2wv-TI-T7Z"/>
+                                    <constraint firstItem="Idj-bm-icf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0iM-15-xc2" secondAttribute="leading" constant="20" id="7FP-Kb-uI7"/>
                                     <constraint firstItem="p8a-f6-gV9" firstAttribute="width" secondItem="0iM-15-xc2" secondAttribute="width" multiplier="0.45" id="7ds-HO-OSj"/>
                                     <constraint firstItem="zqj-uJ-Vmx" firstAttribute="centerX" secondItem="0iM-15-xc2" secondAttribute="centerX" id="8Jp-mq-dBI"/>
                                     <constraint firstItem="zqj-uJ-Vmx" firstAttribute="top" secondItem="p8a-f6-gV9" secondAttribute="bottom" constant="-20" id="BUT-sk-XWA"/>
                                     <constraint firstAttribute="width" secondItem="0iM-15-xc2" secondAttribute="height" multiplier="1:1" id="VPq-Xy-M13"/>
                                     <constraint firstAttribute="trailing" secondItem="p8a-f6-gV9" secondAttribute="trailing" constant="30" id="ds2-3e-3QF"/>
-                                    <constraint firstItem="Idj-bm-icf" firstAttribute="top" secondItem="zqj-uJ-Vmx" secondAttribute="bottom" constant="20" id="jPq-Vu-3dG"/>
+                                    <constraint firstItem="Idj-bm-icf" firstAttribute="top" secondItem="zqj-uJ-Vmx" secondAttribute="bottom" id="jPq-Vu-3dG"/>
                                     <constraint firstItem="Idj-bm-icf" firstAttribute="centerX" secondItem="0iM-15-xc2" secondAttribute="centerX" id="sDi-Vi-zHO"/>
                                 </constraints>
                             </view>
