@@ -45,7 +45,7 @@ class HPViewController: UIViewController, GADBannerViewDelegate {
         
         if !self.countRunningFlag {
             self.countRunningFlag = true
-            self.timerFunction = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector:#selector(timer) , userInfo: nil, repeats: true)
+            self.timerFunction = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(timer), userInfo: nil, repeats: true)
         }
         
         if self.countRunningFlag {
@@ -71,7 +71,7 @@ class HPViewController: UIViewController, GADBannerViewDelegate {
             self.timerFunction?.invalidate()
             self.countRunningFlag = false
             
-            let resultVC = self.storyboard?.instantiateViewController(withIdentifier: "HPResultModalViewController") as! HPResultModalViewController
+            guard let resultVC = R.storyboard.main.hpResultModalViewController() else { return }
             resultVC.setup(count: self.tappedCount, completion: { [unowned self] in
                 self.setupLabels()
             })
@@ -116,4 +116,3 @@ class HPViewController: UIViewController, GADBannerViewDelegate {
     }
     
 }
-
