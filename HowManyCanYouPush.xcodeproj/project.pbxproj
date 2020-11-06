@@ -15,6 +15,7 @@
 		053015FF2551145500FC5E5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053015FD2551145500FC5E5C /* LaunchScreen.storyboard */; };
 		055DB89525511FD7000F9022 /* HPResultModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055DB89425511FD7000F9022 /* HPResultModalViewController.swift */; };
 		0581A2EC2553D50600AA2354 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0581A2EB2553D50600AA2354 /* GoogleService-Info.plist */; };
+		05DC053225555C8400CA28EF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC053125555C8400CA28EF /* R.generated.swift */; };
 		67C2AFB70153AF4592C3C749 /* Pods_HowManyCanYouPush.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EFB853A895382CA33C4C90 /* Pods_HowManyCanYouPush.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		053016002551145500FC5E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		055DB89425511FD7000F9022 /* HPResultModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPResultModalViewController.swift; sourceTree = "<group>"; };
 		0581A2EB2553D50600AA2354 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		05DC053125555C8400CA28EF /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		4E3DB4E93818AFF569318FE3 /* Pods-HowManyCanYouPush.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HowManyCanYouPush.release.xcconfig"; path = "Target Support Files/Pods-HowManyCanYouPush/Pods-HowManyCanYouPush.release.xcconfig"; sourceTree = "<group>"; };
 		B0EFB853A895382CA33C4C90 /* Pods_HowManyCanYouPush.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HowManyCanYouPush.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B93E7C1537FE63ECAC087AEB /* Pods-HowManyCanYouPush.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HowManyCanYouPush.debug.xcconfig"; path = "Target Support Files/Pods-HowManyCanYouPush/Pods-HowManyCanYouPush.debug.xcconfig"; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		053015E62551145400FC5E5C = {
 			isa = PBXGroup;
 			children = (
+				05DC053125555C8400CA28EF /* R.generated.swift */,
 				053015F12551145400FC5E5C /* HowManyCanYouPush */,
 				053015F02551145400FC5E5C /* Products */,
 				51CB938AF36C2C94D57C43A9 /* Pods */,
@@ -135,10 +138,12 @@
 			buildConfigurationList = 053016032551145500FC5E5C /* Build configuration list for PBXNativeTarget "HowManyCanYouPush" */;
 			buildPhases = (
 				A30EA3C712FDB4731E3C231C /* [CP] Check Pods Manifest.lock */,
+				05DC052F25555BB300CA28EF /* R Swift */,
 				053015EB2551145400FC5E5C /* Sources */,
 				053015EC2551145400FC5E5C /* Frameworks */,
 				053015ED2551145400FC5E5C /* Resources */,
 				83620C4188A780D370EF79C2 /* [CP] Embed Pods Frameworks */,
+				05DC052E25555B8600CA28EF /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -196,6 +201,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		05DC052E25555B8600CA28EF /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n${PODS_ROOT}/SwiftLint/swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		05DC052F25555BB300CA28EF /* R Swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = "R Swift";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		83620C4188A780D370EF79C2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -244,6 +287,7 @@
 			files = (
 				053015F72551145400FC5E5C /* HPViewController.swift in Sources */,
 				055DB89525511FD7000F9022 /* HPResultModalViewController.swift in Sources */,
+				05DC053225555C8400CA28EF /* R.generated.swift in Sources */,
 				053015F32551145400FC5E5C /* AppDelegate.swift in Sources */,
 				053015F52551145400FC5E5C /* SceneDelegate.swift in Sources */,
 			);
