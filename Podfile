@@ -8,6 +8,8 @@ target 'HowManyCanYouPush' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Core'
   pod 'Firebase/AdMob'
+  pod 'R.swift'
+  pod 'SwiftLint'
 
   # Pods for HowManyCanYouPush
 
