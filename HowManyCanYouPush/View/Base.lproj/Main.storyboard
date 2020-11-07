@@ -212,10 +212,30 @@
                                     <constraint firstItem="Idj-bm-icf" firstAttribute="centerX" secondItem="0iM-15-xc2" secondAttribute="centerX" id="sDi-Vi-zHO"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMo-aE-RC0">
+                                <rect key="frame" x="94" y="511" width="187.5" height="50"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="44S-4M-9Qd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="SHARE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="shareButtonTapped:" destination="b4I-gN-D1G" eventType="touchUpInside" id="qj2-NR-AOb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gUI-Kw-LR3"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="aMo-aE-RC0" firstAttribute="top" secondItem="0iM-15-xc2" secondAttribute="bottom" constant="30" id="3Xs-8d-mGH"/>
                             <constraint firstItem="7kA-G0-eYN" firstAttribute="centerX" secondItem="8Fh-tB-22S" secondAttribute="centerX" id="5uN-uP-fUq"/>
                             <constraint firstItem="f9a-1Z-qrz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gUI-Kw-LR3" secondAttribute="leading" symbolic="YES" id="6xr-2k-Xgn"/>
                             <constraint firstItem="f9a-1Z-qrz" firstAttribute="top" secondItem="gUI-Kw-LR3" secondAttribute="top" constant="15" id="9N0-6g-TSR"/>
@@ -223,8 +243,10 @@
                             <constraint firstItem="7kA-G0-eYN" firstAttribute="width" secondItem="8Fh-tB-22S" secondAttribute="width" multiplier="0.25" id="dTR-DF-1lx"/>
                             <constraint firstItem="0iM-15-xc2" firstAttribute="centerX" secondItem="8Fh-tB-22S" secondAttribute="centerX" id="exn-ND-KJ0"/>
                             <constraint firstItem="0iM-15-xc2" firstAttribute="leading" secondItem="gUI-Kw-LR3" secondAttribute="leading" constant="40" id="gbI-2V-voQ"/>
+                            <constraint firstItem="aMo-aE-RC0" firstAttribute="width" secondItem="8Fh-tB-22S" secondAttribute="width" multiplier="0.5" id="iwV-Zh-esg"/>
                             <constraint firstItem="gUI-Kw-LR3" firstAttribute="trailing" secondItem="f9a-1Z-qrz" secondAttribute="trailing" constant="15" id="mah-kY-P7j"/>
                             <constraint firstItem="0iM-15-xc2" firstAttribute="centerY" secondItem="8Fh-tB-22S" secondAttribute="centerY" id="vDR-X8-GzH"/>
+                            <constraint firstItem="aMo-aE-RC0" firstAttribute="centerX" secondItem="8Fh-tB-22S" secondAttribute="centerX" id="yzh-oz-V6s"/>
                         </constraints>
                     </view>
                     <connections>

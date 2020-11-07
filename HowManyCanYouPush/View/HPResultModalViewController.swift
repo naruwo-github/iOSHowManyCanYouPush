@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Accounts
 
 // MARK: - 結果モーダル画面クラス
 class HPResultModalViewController: UIViewController {
@@ -46,6 +47,13 @@ class HPResultModalViewController: UIViewController {
     
     @IBAction private func closeButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction private func shareButtonTapped(_ sender: Any) {
+        let text = "10秒間に\(self.tappedCount)回プッシュ達成！！！"
+        let urlString = "https://www.apple.com/jp/app-store/"
+        let image = R.image.appicon_for_share()!
+        self.showActivityView(shareText: text, showWebSite: urlString, shareImage: image)
     }
     
     // MARK: - パブリック関数
@@ -93,6 +101,34 @@ class HPResultModalViewController: UIViewController {
         UIView.animate(withDuration: 1.5, delay: 0.0, options: .repeat, animations: {
             self.updateRecordView.alpha = 1.0
         })
+    }
+    
+    private func showActivityView(shareText: String, showWebSite: String, shareImage: UIImage) {
+        let websiteURL = NSURL(string: showWebSite)!
+        let activityItems = [shareText, websiteURL, shareImage] as [Any]
+        // 初期化処理
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        // 使用しないアクティビティタイプ
+        let excludedActivityTypes = [
+            UIActivity.ActivityType.addToReadingList,
+            UIActivity.ActivityType.airDrop,
+            UIActivity.ActivityType.assignToContact,
+            UIActivity.ActivityType.copyToPasteboard,
+            UIActivity.ActivityType.mail,
+            UIActivity.ActivityType.markupAsPDF,
+            UIActivity.ActivityType.message,
+            UIActivity.ActivityType.openInIBooks,
+//            UIActivity.ActivityType.postToFacebook,
+            UIActivity.ActivityType.postToFlickr,
+            UIActivity.ActivityType.postToTencentWeibo,
+//            UIActivity.ActivityType.postToTwitter,
+            UIActivity.ActivityType.postToVimeo,
+            UIActivity.ActivityType.postToWeibo,
+            UIActivity.ActivityType.print,
+            UIActivity.ActivityType.saveToCameraRoll
+        ]
+        activityVC.excludedActivityTypes = excludedActivityTypes
+        self.present(activityVC, animated: true, completion: nil)
     }
     
 }
