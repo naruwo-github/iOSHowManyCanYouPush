@@ -17,6 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         GADMobileAds.sharedInstance().start(completionHandler: nil)
+        
+        let key = "startUpCount"
+        HPUserHelper.save(key, value: HPUserHelper.load(key, returnClass: Int.self) ?? 0 + 1)
+        HPUserHelper.sync()
+
+        let count = HPUserHelper.load(key, returnClass: Int.self) ?? 0
+        if count == 10 || count == 30 || count == 60 {
+            SKStoreReviewController.requestReview()
+        }
+        
         return true
     }
 

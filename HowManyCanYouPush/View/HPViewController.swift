@@ -11,16 +11,20 @@ import AVFoundation
 import GoogleMobileAds
 
 // MARK: - スタート画面＝PUSHボタン画面クラス
-class HPViewController: UIViewController, GADBannerViewDelegate {
+class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstitialDelegate*/ {
 
+    private let gameHelper = HPGameCenterHelper()
     private let TOP_BANNER_ID = "ca-app-pub-6492692627915720/4410584383"
-    private let topBannerView = GADBannerView(adSize: kGADAdSizeBanner)
-    @IBOutlet private weak var topAdView: UIView!
+    private let BOTTOM_BANNER_ID = "ca-app-pub-6492692627915720/1570714342"
+//    private var interstitial: GADInterstitial!
+//    private let INTERSTITIAL_ID = "ca-app-pub-3940256099942544/5135589807"// 本番: "ca-app-pub-6492692627915720/8211310163"
     
+    @IBOutlet private weak var topAdView: GADBannerView!
     @IBOutlet private weak var countDownLabel: UILabel!
     @IBOutlet private weak var countingLabel: UILabel!
     @IBOutlet private weak var highScoreLabel: UILabel!
     @IBOutlet private weak var pushButton: UIButton!
+    @IBOutlet private weak var bottomAdView: GADBannerView!
     
     private var countDownTime: Float = 10.0
     private var tappedCount: Int = 0
@@ -36,6 +40,24 @@ class HPViewController: UIViewController, GADBannerViewDelegate {
         
         self.setupLabels()
         self.setupButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.gameHelper.authenticateLocalPlayer(_self: self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadBannerAd()
+    }
+    
+    override func viewWillTransition(to size: CGSize,
+                                     with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { _ in
+            self.loadBannerAd()
+        })
     }
 
     // MARK: - イベント
@@ -74,27 +96,60 @@ class HPViewController: UIViewController, GADBannerViewDelegate {
             guard let resultVC = R.storyboard.main.hpResultModalViewController() else { return }
             resultVC.setup(count: self.tappedCount, completion: { [unowned self] in
                 self.setupLabels()
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { [unowned self] in
+//                    self.showInterstitialAd()
+//                })
             })
             self.present(resultVC, animated: true, completion: nil)
         }
     }
     
     private func setupAd() {
-        self.topBannerView.adUnitID = self.TOP_BANNER_ID
-        self.topBannerView.load(GADRequest())
-        self.topBannerView.center.x = self.view.center.x
-        self.topBannerView.delegate = self
-        self.topBannerView.rootViewController = self
-        self.topAdView.addSubview(self.topBannerView)
+        // TODO: 使い捨て考慮して再生成処理をどっかに追記するべし
+//        self.interstitial = GADInterstitial(adUnitID: self.INTERSTITIAL_ID)
+//        self.interstitial.load(GADRequest())
+//        self.interstitial.delegate = self
+        
+        self.topAdView.adUnitID = self.TOP_BANNER_ID
+        self.topAdView.rootViewController = self
+        self.bottomAdView.adUnitID = self.BOTTOM_BANNER_ID
+        self.bottomAdView.rootViewController = self
+    }
+    
+//    private func showInterstitialAd() {
+//        guard let ad = self.interstitial else { return }
+//
+//        let backCount = HPUserHelper.backToInitialFromResultCount
+//        if backCount != 0 && backCount % 7 == 0 {
+//            if ad.isReady {
+//                ad.present(fromRootViewController: self)
+//            }
+//        }
+//    }
+    
+    private func loadBannerAd() {
+        let frame = { () -> CGRect in
+            return view.frame.inset(by: view.safeAreaInsets)
+        }()
+        let viewWidth = frame.size.width
+        self.topAdView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
+        self.topAdView.load(GADRequest())
+        self.bottomAdView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
+        self.bottomAdView.load(GADRequest())
     }
 
     private func setupLabels() {
         self.countDownTime = 10.0
         self.countDownLabel.text = countDownTime.description
+        self.countDownLabel.font = UIDevice.current.userInterfaceIdiom == .pad
+            ? UIFont.systemFont(ofSize: 130) : UIFont.systemFont(ofSize: 65)
         self.tappedCount = 0
         self.countingLabel.text = tappedCount.description
-        let highestCount = UserDefaults.standard.integer(forKey: "score")
-        self.highScoreLabel.text = "High Score: \(highestCount)"
+        self.countingLabel.font = UIDevice.current.userInterfaceIdiom == .pad
+            ? UIFont.systemFont(ofSize: 440) : UIFont.systemFont(ofSize: 220)
+        self.highScoreLabel.text = "High Score: \(HPUserHelper.bestScore)"
+        self.highScoreLabel.font = UIDevice.current.userInterfaceIdiom == .pad
+            ? UIFont.systemFont(ofSize: 40) : UIFont.systemFont(ofSize: 20)
     }
     
     private func setupButton() {
@@ -114,5 +169,36 @@ class HPViewController: UIViewController, GADBannerViewDelegate {
             AudioServicesPlaySystemSound(soundID)
         }
     }
+    
+//    // Tells the delegate an ad request succeeded.
+//    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+//      print("interstitialDidReceiveAd")
+//    }
+//
+//    // Tells the delegate an ad request failed.
+//    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
+//      print("interstitial:didFailToReceiveAdWithError: \(error.localizedDescription)")
+//    }
+//
+//    // Tells the delegate that an interstitial will be presented.
+//    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
+//      print("interstitialWillPresentScreen")
+//    }
+//
+//    // Tells the delegate the interstitial is to be animated off the screen.
+//    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
+//      print("interstitialWillDismissScreen")
+//    }
+//
+//    // Tells the delegate the interstitial had been animated off the screen.
+//    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+//      print("interstitialDidDismissScreen")
+//    }
+//
+//    // Tells the delegate that a user click will open another app
+//    // (such as the App Store), backgrounding the current app.
+//    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
+//      print("interstitialWillLeaveApplication")
+//    }
     
 }
