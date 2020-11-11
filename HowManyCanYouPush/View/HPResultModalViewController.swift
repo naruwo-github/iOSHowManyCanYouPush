@@ -9,10 +9,14 @@ import UIKit
 import Accounts
 import GameKit
 
+import GoogleMobileAds
+
 // MARK: - 結果モーダル画面クラス
-class HPResultModalViewController: UIViewController {
+class HPResultModalViewController: UIViewController, GADBannerViewDelegate {
     
     private var dismissCompletion: (() -> Void)?
+    private let BOTTOM_BANNER_ID = "ca-app-pub-3940256099942544/2934735716"// 本番: "ca-app-pub-6492692627915720/1570714342"
+    private let bottomBannerView = GADBannerView(adSize: kGADAdSizeBanner)
     
     @IBOutlet private weak var closeButton: UIButton!
     @IBOutlet private weak var centerView: UIView!
@@ -21,23 +25,19 @@ class HPResultModalViewController: UIViewController {
     @IBOutlet private weak var preHighScoreLabel: UILabel!
     @IBOutlet private weak var rankingButton: UIButton!
     @IBOutlet private weak var shareButton: UIButton!
+    @IBOutlet private weak var bottomAdView: UIView!
     
     private let gameHelper = HPGameCenterHelper()
-    private let highScore = UserDefaults.standard.integer(forKey: "score")
     private var tappedCount: Int = 0
     
     // MARK: - ライフサイクル
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupAd()
         
         self.setupButton()
         self.setupViewAndLabel()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.gameHelper.authenticateLocalPlayer(_self: self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -49,6 +49,8 @@ class HPResultModalViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        let backCount = HPUserHelper.backToInitialFromResultCount
+        HPUserHelper.backToInitialFromResultCount = backCount + 1
         self.dismissCompletion?()
     }
     
@@ -106,17 +108,17 @@ class HPResultModalViewController: UIViewController {
         
         self.tappedCountLabel.text = self.tappedCount.description
         
-        if self.highScore < self.tappedCount {
-            self.preHighScoreLabel.text = "Your best score was \(self.highScore)."
+        if HPUserHelper.bestScore < self.tappedCount {
+            self.preHighScoreLabel.text = "Your best score was \(HPUserHelper.bestScore)."
         } else {
-            self.preHighScoreLabel.text = "Your best score is \(self.highScore)."
+            self.preHighScoreLabel.text = "Your best score is \(HPUserHelper.bestScore)."
         }
     }
     
     private func saveHighScoreAndShowAnimation() {
-        if self.highScore < self.tappedCount {
+        if HPUserHelper.bestScore < self.tappedCount {
             self.showUpdateRecordView()
-            UserDefaults.standard.set(self.tappedCount, forKey: "score")
+            HPUserHelper.bestScore = self.tappedCount
         }
     }
     
@@ -153,6 +155,15 @@ class HPResultModalViewController: UIViewController {
         ]
         activityVC.excludedActivityTypes = excludedActivityTypes
         self.present(activityVC, animated: true, completion: nil)
+    }
+    
+    private func setupAd() {
+        self.bottomBannerView.adUnitID = self.BOTTOM_BANNER_ID
+        self.bottomBannerView.load(GADRequest())
+        self.bottomBannerView.center.x = self.view.center.x
+        self.bottomBannerView.delegate = self
+        self.bottomBannerView.rootViewController = self
+        self.bottomAdView.addSubview(self.bottomBannerView)
     }
     
 }

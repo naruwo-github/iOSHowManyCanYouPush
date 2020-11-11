@@ -11,11 +11,13 @@ import AVFoundation
 import GoogleMobileAds
 
 // MARK: - スタート画面＝PUSHボタン画面クラス
-class HPViewController: UIViewController, GADBannerViewDelegate {
+class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstitialDelegate*/ {
 
     private let gameHelper = HPGameCenterHelper()
-    private let TOP_BANNER_ID = "ca-app-pub-6492692627915720/4410584383"
+    private let TOP_BANNER_ID = "ca-app-pub-3940256099942544/2934735716"// 本番:  "ca-app-pub-6492692627915720/4410584383"
     private let topBannerView = GADBannerView(adSize: kGADAdSizeBanner)
+//    private var interstitial: GADInterstitial!
+//    private let INTERSTITIAL_ID = "ca-app-pub-3940256099942544/5135589807"// 本番: "ca-app-pub-6492692627915720/8211310163"
     
     @IBOutlet private weak var topAdView: UIView!
     @IBOutlet private weak var countDownLabel: UILabel!
@@ -80,12 +82,20 @@ class HPViewController: UIViewController, GADBannerViewDelegate {
             guard let resultVC = R.storyboard.main.hpResultModalViewController() else { return }
             resultVC.setup(count: self.tappedCount, completion: { [unowned self] in
                 self.setupLabels()
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { [unowned self] in
+//                    self.showInterstitialAd()
+//                })
             })
             self.present(resultVC, animated: true, completion: nil)
         }
     }
     
     private func setupAd() {
+        // TODO: 使い捨て考慮して再生成処理をどっかに追記するべし
+//        self.interstitial = GADInterstitial(adUnitID: self.INTERSTITIAL_ID)
+//        self.interstitial.load(GADRequest())
+//        self.interstitial.delegate = self
+        
         self.topBannerView.adUnitID = self.TOP_BANNER_ID
         self.topBannerView.load(GADRequest())
         self.topBannerView.center.x = self.view.center.x
@@ -93,14 +103,24 @@ class HPViewController: UIViewController, GADBannerViewDelegate {
         self.topBannerView.rootViewController = self
         self.topAdView.addSubview(self.topBannerView)
     }
+    
+//    private func showInterstitialAd() {
+//        guard let ad = self.interstitial else { return }
+//
+//        let backCount = HPUserHelper.backToInitialFromResultCount
+//        if backCount != 0 && backCount % 7 == 0 {
+//            if ad.isReady {
+//                ad.present(fromRootViewController: self)
+//            }
+//        }
+//    }
 
     private func setupLabels() {
         self.countDownTime = 10.0
         self.countDownLabel.text = countDownTime.description
         self.tappedCount = 0
         self.countingLabel.text = tappedCount.description
-        let highestCount = UserDefaults.standard.integer(forKey: "score")
-        self.highScoreLabel.text = "High Score: \(highestCount)"
+        self.highScoreLabel.text = "High Score: \(HPUserHelper.bestScore)"
     }
     
     private func setupButton() {
@@ -120,5 +140,36 @@ class HPViewController: UIViewController, GADBannerViewDelegate {
             AudioServicesPlaySystemSound(soundID)
         }
     }
+    
+//    // Tells the delegate an ad request succeeded.
+//    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+//      print("interstitialDidReceiveAd")
+//    }
+//
+//    // Tells the delegate an ad request failed.
+//    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
+//      print("interstitial:didFailToReceiveAdWithError: \(error.localizedDescription)")
+//    }
+//
+//    // Tells the delegate that an interstitial will be presented.
+//    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
+//      print("interstitialWillPresentScreen")
+//    }
+//
+//    // Tells the delegate the interstitial is to be animated off the screen.
+//    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
+//      print("interstitialWillDismissScreen")
+//    }
+//
+//    // Tells the delegate the interstitial had been animated off the screen.
+//    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+//      print("interstitialDidDismissScreen")
+//    }
+//
+//    // Tells the delegate that a user click will open another app
+//    // (such as the App Store), backgrounding the current app.
+//    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
+//      print("interstitialWillLeaveApplication")
+//    }
     
 }
