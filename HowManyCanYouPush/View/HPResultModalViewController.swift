@@ -15,7 +15,7 @@ import GoogleMobileAds
 class HPResultModalViewController: UIViewController, GADBannerViewDelegate {
     
     private var dismissCompletion: (() -> Void)?
-    private let BOTTOM_BANNER_ID = "ca-app-pub-3940256099942544/2934735716"// 本番: "ca-app-pub-6492692627915720/1570714342"
+    private let BOTTOM_BANNER_ID = "ca-app-pub-6492692627915720/1570714342"
     
     @IBOutlet private weak var closeButton: UIButton!
     @IBOutlet private weak var centerView: UIView!

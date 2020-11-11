@@ -14,8 +14,8 @@ import GoogleMobileAds
 class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstitialDelegate*/ {
 
     private let gameHelper = HPGameCenterHelper()
-    private let TOP_BANNER_ID = "ca-app-pub-3940256099942544/2934735716"// 本番:  "ca-app-pub-6492692627915720/4410584383"
-    private let BOTTOM_BANNER_ID = "ca-app-pub-3940256099942544/2934735716"// 本番: "ca-app-pub-6492692627915720/1570714342"
+    private let TOP_BANNER_ID = "ca-app-pub-6492692627915720/4410584383"
+    private let BOTTOM_BANNER_ID = "ca-app-pub-6492692627915720/1570714342"
 //    private var interstitial: GADInterstitial!
 //    private let INTERSTITIAL_ID = "ca-app-pub-3940256099942544/5135589807"// 本番: "ca-app-pub-6492692627915720/8211310163"
     
