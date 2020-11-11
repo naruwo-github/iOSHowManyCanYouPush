@@ -14,6 +14,8 @@
 		053015FC2551145500FC5E5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 053015FB2551145500FC5E5C /* Assets.xcassets */; };
 		053015FF2551145500FC5E5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053015FD2551145500FC5E5C /* LaunchScreen.storyboard */; };
 		055DB89525511FD7000F9022 /* HPResultModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055DB89425511FD7000F9022 /* HPResultModalViewController.swift */; };
+		057A4508255B58D000FAC8D0 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057A4507255B58D000FAC8D0 /* GameKit.framework */; };
+		057A450B255B5ABB00FAC8D0 /* HPGameCenterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057A450A255B5ABB00FAC8D0 /* HPGameCenterHelper.swift */; };
 		0581A2EC2553D50600AA2354 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0581A2EB2553D50600AA2354 /* GoogleService-Info.plist */; };
 		05DC053225555C8400CA28EF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC053125555C8400CA28EF /* R.generated.swift */; };
 		67C2AFB70153AF4592C3C749 /* Pods_HowManyCanYouPush.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EFB853A895382CA33C4C90 /* Pods_HowManyCanYouPush.framework */; };
@@ -36,6 +38,8 @@
 		053015FE2551145500FC5E5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		053016002551145500FC5E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		055DB89425511FD7000F9022 /* HPResultModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPResultModalViewController.swift; sourceTree = "<group>"; };
+		057A4507255B58D000FAC8D0 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		057A450A255B5ABB00FAC8D0 /* HPGameCenterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPGameCenterHelper.swift; sourceTree = "<group>"; };
 		0581A2EB2553D50600AA2354 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		05DC053125555C8400CA28EF /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		4E3DB4E93818AFF569318FE3 /* Pods-HowManyCanYouPush.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HowManyCanYouPush.release.xcconfig"; path = "Target Support Files/Pods-HowManyCanYouPush/Pods-HowManyCanYouPush.release.xcconfig"; sourceTree = "<group>"; };
@@ -49,6 +53,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67C2AFB70153AF4592C3C749 /* Pods_HowManyCanYouPush.framework in Frameworks */,
+				057A4508255B58D000FAC8D0 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +107,7 @@
 				053015F22551145400FC5E5C /* AppDelegate.swift */,
 				053015F42551145400FC5E5C /* SceneDelegate.swift */,
 				053015FD2551145500FC5E5C /* LaunchScreen.storyboard */,
+				057A450A255B5ABB00FAC8D0 /* HPGameCenterHelper.swift */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -118,6 +124,7 @@
 		E82C0369F6A432CFF69902AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				057A4507255B58D000FAC8D0 /* GameKit.framework */,
 				051DE81D2553E936008CE6B7 /* nanopb.framework */,
 				051DE81A2553E92A008CE6B7 /* GoogleUtilities.framework */,
 				051DE8172553E91C008CE6B7 /* GoogleMobileAds.framework */,
@@ -287,6 +294,7 @@
 			files = (
 				053015F72551145400FC5E5C /* HPViewController.swift in Sources */,
 				055DB89525511FD7000F9022 /* HPResultModalViewController.swift in Sources */,
+				057A450B255B5ABB00FAC8D0 /* HPGameCenterHelper.swift in Sources */,
 				05DC053225555C8400CA28EF /* R.generated.swift in Sources */,
 				053015F32551145400FC5E5C /* AppDelegate.swift in Sources */,
 				053015F52551145400FC5E5C /* SceneDelegate.swift in Sources */,

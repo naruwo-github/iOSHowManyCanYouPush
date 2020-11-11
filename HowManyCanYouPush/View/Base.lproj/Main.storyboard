@@ -165,16 +165,16 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0iM-15-xc2" userLabel="Center View">
-                                <rect key="frame" x="40" y="186" width="295" height="295"/>
+                                <rect key="frame" x="40" y="156" width="295" height="295"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="58" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="zqj-uJ-Vmx">
-                                        <rect key="frame" x="52" y="58" width="191.5" height="179.5"/>
+                                        <rect key="frame" x="52" y="58" width="191" height="179"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="150"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your best score is 48." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Idj-bm-icf" userLabel="Pre High Score Label">
-                                        <rect key="frame" x="32.5" y="237.5" width="230.5" height="30"/>
+                                        <rect key="frame" x="32" y="237" width="231" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -213,22 +213,31 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMo-aE-RC0">
-                                <rect key="frame" x="94" y="511" width="187.5" height="50"/>
+                                <rect key="frame" x="94" y="481" width="187.5" height="50"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="44S-4M-9Qd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="RANKING">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="rankingButtonTapped:" destination="b4I-gN-D1G" eventType="touchUpInside" id="qj2-NR-AOb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXO-Xn-YTl">
+                                <rect key="frame" x="94" y="551" width="187.5" height="50"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NRy-lu-qs2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <state key="normal" title="SHARE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="shareButtonTapped:" destination="b4I-gN-D1G" eventType="touchUpInside" id="qj2-NR-AOb"/>
+                                    <action selector="shareButtonTapped:" destination="b4I-gN-D1G" eventType="touchUpInside" id="8AD-ai-tOv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -236,16 +245,19 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aMo-aE-RC0" firstAttribute="top" secondItem="0iM-15-xc2" secondAttribute="bottom" constant="30" id="3Xs-8d-mGH"/>
+                            <constraint firstItem="jXO-Xn-YTl" firstAttribute="centerX" secondItem="8Fh-tB-22S" secondAttribute="centerX" id="4e0-GG-aWU"/>
                             <constraint firstItem="7kA-G0-eYN" firstAttribute="centerX" secondItem="8Fh-tB-22S" secondAttribute="centerX" id="5uN-uP-fUq"/>
                             <constraint firstItem="f9a-1Z-qrz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gUI-Kw-LR3" secondAttribute="leading" symbolic="YES" id="6xr-2k-Xgn"/>
                             <constraint firstItem="f9a-1Z-qrz" firstAttribute="top" secondItem="gUI-Kw-LR3" secondAttribute="top" constant="15" id="9N0-6g-TSR"/>
+                            <constraint firstItem="jXO-Xn-YTl" firstAttribute="top" secondItem="aMo-aE-RC0" secondAttribute="bottom" constant="20" id="LDV-UZ-BAM"/>
                             <constraint firstItem="7kA-G0-eYN" firstAttribute="top" secondItem="gUI-Kw-LR3" secondAttribute="top" constant="8" id="QcN-Hq-IsI"/>
+                            <constraint firstItem="jXO-Xn-YTl" firstAttribute="width" secondItem="aMo-aE-RC0" secondAttribute="width" id="aI9-s2-P08"/>
                             <constraint firstItem="7kA-G0-eYN" firstAttribute="width" secondItem="8Fh-tB-22S" secondAttribute="width" multiplier="0.25" id="dTR-DF-1lx"/>
                             <constraint firstItem="0iM-15-xc2" firstAttribute="centerX" secondItem="8Fh-tB-22S" secondAttribute="centerX" id="exn-ND-KJ0"/>
                             <constraint firstItem="0iM-15-xc2" firstAttribute="leading" secondItem="gUI-Kw-LR3" secondAttribute="leading" constant="40" id="gbI-2V-voQ"/>
                             <constraint firstItem="aMo-aE-RC0" firstAttribute="width" secondItem="8Fh-tB-22S" secondAttribute="width" multiplier="0.5" id="iwV-Zh-esg"/>
                             <constraint firstItem="gUI-Kw-LR3" firstAttribute="trailing" secondItem="f9a-1Z-qrz" secondAttribute="trailing" constant="15" id="mah-kY-P7j"/>
-                            <constraint firstItem="0iM-15-xc2" firstAttribute="centerY" secondItem="8Fh-tB-22S" secondAttribute="centerY" id="vDR-X8-GzH"/>
+                            <constraint firstItem="0iM-15-xc2" firstAttribute="centerY" secondItem="8Fh-tB-22S" secondAttribute="centerY" constant="-30" id="vDR-X8-GzH"/>
                             <constraint firstItem="aMo-aE-RC0" firstAttribute="centerX" secondItem="8Fh-tB-22S" secondAttribute="centerX" id="yzh-oz-V6s"/>
                         </constraints>
                     </view>
@@ -253,6 +265,8 @@
                         <outlet property="centerView" destination="0iM-15-xc2" id="fRf-8e-vFU"/>
                         <outlet property="closeButton" destination="f9a-1Z-qrz" id="MPs-Hk-A7u"/>
                         <outlet property="preHighScoreLabel" destination="Idj-bm-icf" id="tkS-CS-92T"/>
+                        <outlet property="rankingButton" destination="aMo-aE-RC0" id="lgw-iB-A77"/>
+                        <outlet property="shareButton" destination="jXO-Xn-YTl" id="j7L-Fx-G2Y"/>
                         <outlet property="tappedCountLabel" destination="zqj-uJ-Vmx" id="bWD-K2-cRc"/>
                         <outlet property="updateRecordView" destination="p8a-f6-gV9" id="kxA-CV-2CJ"/>
                     </connections>
@@ -271,6 +285,9 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

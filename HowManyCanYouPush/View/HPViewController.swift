@@ -13,10 +13,11 @@ import GoogleMobileAds
 // MARK: - スタート画面＝PUSHボタン画面クラス
 class HPViewController: UIViewController, GADBannerViewDelegate {
 
+    private let gameHelper = HPGameCenterHelper()
     private let TOP_BANNER_ID = "ca-app-pub-6492692627915720/4410584383"
     private let topBannerView = GADBannerView(adSize: kGADAdSizeBanner)
-    @IBOutlet private weak var topAdView: UIView!
     
+    @IBOutlet private weak var topAdView: UIView!
     @IBOutlet private weak var countDownLabel: UILabel!
     @IBOutlet private weak var countingLabel: UILabel!
     @IBOutlet private weak var highScoreLabel: UILabel!
@@ -36,6 +37,11 @@ class HPViewController: UIViewController, GADBannerViewDelegate {
         
         self.setupLabels()
         self.setupButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.gameHelper.authenticateLocalPlayer(_self: self)
     }
 
     // MARK: - イベント

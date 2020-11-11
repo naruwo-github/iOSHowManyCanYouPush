@@ -7,6 +7,7 @@
 
 import UIKit
 import Accounts
+import GameKit
 
 // MARK: - 結果モーダル画面クラス
 class HPResultModalViewController: UIViewController {
@@ -18,9 +19,12 @@ class HPResultModalViewController: UIViewController {
     @IBOutlet private weak var updateRecordView: UIView!
     @IBOutlet private weak var tappedCountLabel: UILabel!
     @IBOutlet private weak var preHighScoreLabel: UILabel!
+    @IBOutlet private weak var rankingButton: UIButton!
+    @IBOutlet private weak var shareButton: UIButton!
     
-    private var tappedCount: Int = 0
+    private let gameHelper = HPGameCenterHelper()
     private let highScore = UserDefaults.standard.integer(forKey: "score")
+    private var tappedCount: Int = 0
     
     // MARK: - ライフサイクル
     
@@ -29,6 +33,11 @@ class HPResultModalViewController: UIViewController {
         
         self.setupButton()
         self.setupViewAndLabel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.gameHelper.authenticateLocalPlayer(_self: self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -49,6 +58,11 @@ class HPResultModalViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction private func rankingButtonTapped(_ sender: Any) {
+        self.gameHelper.sendLeaderboard(rate: Int64(self.tappedCount), _self: self)
+        self.gameHelper.showRanking(_self: self)
+    }
+    
     @IBAction private func shareButtonTapped(_ sender: Any) {
         let text = "10秒間に\(self.tappedCount)回プッシュ達成！！！"
         let urlString = "https://www.apple.com/jp/app-store/"
@@ -67,12 +81,22 @@ class HPResultModalViewController: UIViewController {
     
     private func setupButton() {
         self.closeButton.layer.cornerRadius = 15
-        self.closeButton.clipsToBounds = false
-        self.closeButton.layer.masksToBounds = false
-        self.closeButton.layer.shadowOffset = CGSize(width: 2, height: 2)
-        self.closeButton.layer.shadowColor = UIColor.black.cgColor
-        self.closeButton.layer.shadowRadius = 4.0
-        self.closeButton.layer.shadowOpacity = 0.4
+        self.setShadowOnButton(button: self.closeButton)
+        
+        self.rankingButton.layer.cornerRadius = 25
+        self.setShadowOnButton(button: self.rankingButton)
+        
+        self.shareButton.layer.cornerRadius = 25
+        self.setShadowOnButton(button: self.shareButton)
+    }
+    
+    private func setShadowOnButton(button: UIButton) {
+        button.clipsToBounds = false
+        button.layer.masksToBounds = false
+        button.layer.shadowOffset = CGSize(width: 2, height: 2)
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowRadius = 4.0
+        button.layer.shadowOpacity = 0.4
     }
     
     private func setupViewAndLabel() {
@@ -129,6 +153,14 @@ class HPResultModalViewController: UIViewController {
         ]
         activityVC.excludedActivityTypes = excludedActivityTypes
         self.present(activityVC, animated: true, completion: nil)
+    }
+    
+}
+
+extension HPResultModalViewController: GKGameCenterControllerDelegate {
+    
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismiss(animated: true, completion: nil)
     }
     
 }
