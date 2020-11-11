@@ -66,7 +66,7 @@ class HPResultModalViewController: UIViewController, GADBannerViewDelegate {
     }
     
     @IBAction private func shareButtonTapped(_ sender: Any) {
-        let text = "10秒間に\(self.tappedCount)回プッシュ達成！！！"
+        let text = "\(self.tappedCount) pushed in 10 seconds！"
         let urlString = "https://www.apple.com/jp/app-store/"
         let image = R.image.appicon_for_share()!
         self.showActivityView(shareText: text, showWebSite: urlString, shareImage: image)
