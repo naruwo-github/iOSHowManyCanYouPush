@@ -42,15 +42,15 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shD-47-rep" userLabel="Center Label View">
-                                        <rect key="frame" x="0.0" y="113.5" width="375" height="340"/>
+                                        <rect key="frame" x="0.0" y="113.5" width="375" height="280"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="75" translatesAutoresizingMaskIntoConstraints="NO" id="dEr-Sv-PDe" userLabel="Count Label">
-                                                <rect key="frame" x="115.5" y="38.5" width="144" height="263"/>
+                                                <rect key="frame" x="115.5" y="-11.5" width="144" height="263"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="220"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AA-Cs-h2x" userLabel="High Score Label">
-                                                <rect key="frame" x="10" y="306" width="119" height="24"/>
+                                                <rect key="frame" x="10" y="246" width="119" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -60,14 +60,14 @@
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0AA-Cs-h2x" secondAttribute="trailing" constant="20" symbolic="YES" id="WbB-1O-0sr"/>
                                             <constraint firstItem="0AA-Cs-h2x" firstAttribute="leading" secondItem="shD-47-rep" secondAttribute="leading" constant="10" id="dKi-bh-ymp"/>
                                             <constraint firstItem="dEr-Sv-PDe" firstAttribute="centerX" secondItem="shD-47-rep" secondAttribute="centerX" id="eQC-wn-kRw"/>
-                                            <constraint firstItem="dEr-Sv-PDe" firstAttribute="centerY" secondItem="shD-47-rep" secondAttribute="centerY" id="yhI-kg-Afs"/>
+                                            <constraint firstItem="dEr-Sv-PDe" firstAttribute="centerY" secondItem="shD-47-rep" secondAttribute="centerY" constant="-20" id="yhI-kg-Afs"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVf-7h-0gV" userLabel="Bottom Button View">
-                                        <rect key="frame" x="0.0" y="453.5" width="375" height="113.5"/>
+                                        <rect key="frame" x="0.0" y="393.5" width="375" height="173.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVG-zb-8GQ" userLabel="Push Button">
-                                                <rect key="frame" x="117.5" y="-13" width="140" height="140"/>
+                                                <rect key="frame" x="117.5" y="17" width="140" height="140"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="140" id="BbO-Yg-Kmf"/>
@@ -93,7 +93,7 @@
                                     <constraint firstAttribute="trailing" secondItem="hVf-7h-0gV" secondAttribute="trailing" id="BeK-sK-R98"/>
                                     <constraint firstItem="hVf-7h-0gV" firstAttribute="leading" secondItem="scu-lX-2zj" secondAttribute="leading" id="GYN-2e-Dvg"/>
                                     <constraint firstAttribute="bottom" secondItem="hVf-7h-0gV" secondAttribute="bottom" id="M3N-la-HJ2"/>
-                                    <constraint firstItem="shD-47-rep" firstAttribute="centerY" secondItem="scu-lX-2zj" secondAttribute="centerY" id="SBz-gx-Zcu"/>
+                                    <constraint firstItem="shD-47-rep" firstAttribute="centerY" secondItem="scu-lX-2zj" secondAttribute="centerY" constant="-30" id="SBz-gx-Zcu"/>
                                     <constraint firstItem="lc0-an-r9z" firstAttribute="height" secondItem="scu-lX-2zj" secondAttribute="height" multiplier="0.2" id="ZdB-Yw-TbX"/>
                                     <constraint firstItem="lc0-an-r9z" firstAttribute="leading" secondItem="scu-lX-2zj" secondAttribute="leading" id="dpJ-Xw-PqG"/>
                                     <constraint firstItem="hVf-7h-0gV" firstAttribute="top" secondItem="shD-47-rep" secondAttribute="bottom" id="eOs-pv-Rbw"/>
