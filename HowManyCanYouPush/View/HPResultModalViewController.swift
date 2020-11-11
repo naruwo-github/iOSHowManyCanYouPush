@@ -16,7 +16,6 @@ class HPResultModalViewController: UIViewController, GADBannerViewDelegate {
     
     private var dismissCompletion: (() -> Void)?
     private let BOTTOM_BANNER_ID = "ca-app-pub-3940256099942544/2934735716"// 本番: "ca-app-pub-6492692627915720/1570714342"
-    private let bottomBannerView = GADBannerView(adSize: kGADAdSizeBanner)
     
     @IBOutlet private weak var closeButton: UIButton!
     @IBOutlet private weak var centerView: UIView!
@@ -25,7 +24,7 @@ class HPResultModalViewController: UIViewController, GADBannerViewDelegate {
     @IBOutlet private weak var preHighScoreLabel: UILabel!
     @IBOutlet private weak var rankingButton: UIButton!
     @IBOutlet private weak var shareButton: UIButton!
-    @IBOutlet private weak var bottomAdView: UIView!
+    @IBOutlet private weak var bottomAdView: GADBannerView!
     
     private let gameHelper = HPGameCenterHelper()
     private var tappedCount: Int = 0
@@ -44,6 +43,7 @@ class HPResultModalViewController: UIViewController, GADBannerViewDelegate {
         super.viewDidAppear(animated)
         
         self.saveHighScoreAndShowAnimation()
+        self.loadBannerAd()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -52,6 +52,14 @@ class HPResultModalViewController: UIViewController, GADBannerViewDelegate {
         let backCount = HPUserHelper.backToInitialFromResultCount
         HPUserHelper.backToInitialFromResultCount = backCount + 1
         self.dismissCompletion?()
+    }
+    
+    override func viewWillTransition(to size: CGSize,
+                                     with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { _ in
+            self.loadBannerAd()
+        })
     }
     
     // MARK: - イベント
@@ -158,12 +166,17 @@ class HPResultModalViewController: UIViewController, GADBannerViewDelegate {
     }
     
     private func setupAd() {
-        self.bottomBannerView.adUnitID = self.BOTTOM_BANNER_ID
-        self.bottomBannerView.load(GADRequest())
-        self.bottomBannerView.center.x = self.view.center.x
-        self.bottomBannerView.delegate = self
-        self.bottomBannerView.rootViewController = self
-        self.bottomAdView.addSubview(self.bottomBannerView)
+        self.bottomAdView.adUnitID = self.BOTTOM_BANNER_ID
+        self.bottomAdView.rootViewController = self
+    }
+    
+    private func loadBannerAd() {
+        let frame = { () -> CGRect in
+            return view.frame.inset(by: view.safeAreaInsets)
+        }()
+        let viewWidth = frame.size.width
+        self.bottomAdView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
+        self.bottomAdView.load(GADRequest())
     }
     
 }

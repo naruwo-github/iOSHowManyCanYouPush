@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2v-EP-xJl" userLabel="Top Ad View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2v-EP-xJl" userLabel="Top Ad View" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scu-lX-2zj" userLabel="Content View">
@@ -240,7 +240,7 @@
                                     <action selector="shareButtonTapped:" destination="b4I-gN-D1G" eventType="touchUpInside" id="8AD-ai-tOv"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eK4-Pl-Mg6" userLabel="Bottom Ad View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eK4-Pl-Mg6" userLabel="Bottom Ad View" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Gnh-Lb-8Xa"/>

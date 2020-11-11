@@ -15,11 +15,10 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
 
     private let gameHelper = HPGameCenterHelper()
     private let TOP_BANNER_ID = "ca-app-pub-3940256099942544/2934735716"// 本番:  "ca-app-pub-6492692627915720/4410584383"
-    private let topBannerView = GADBannerView(adSize: kGADAdSizeBanner)
 //    private var interstitial: GADInterstitial!
 //    private let INTERSTITIAL_ID = "ca-app-pub-3940256099942544/5135589807"// 本番: "ca-app-pub-6492692627915720/8211310163"
     
-    @IBOutlet private weak var topAdView: UIView!
+    @IBOutlet private weak var topAdView: GADBannerView!
     @IBOutlet private weak var countDownLabel: UILabel!
     @IBOutlet private weak var countingLabel: UILabel!
     @IBOutlet private weak var highScoreLabel: UILabel!
@@ -44,6 +43,19 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.gameHelper.authenticateLocalPlayer(_self: self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadBannerAd()
+    }
+    
+    override func viewWillTransition(to size: CGSize,
+                                     with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { _ in
+            self.loadBannerAd()
+        })
     }
 
     // MARK: - イベント
@@ -96,12 +108,8 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
 //        self.interstitial.load(GADRequest())
 //        self.interstitial.delegate = self
         
-        self.topBannerView.adUnitID = self.TOP_BANNER_ID
-        self.topBannerView.load(GADRequest())
-        self.topBannerView.center.x = self.view.center.x
-        self.topBannerView.delegate = self
-        self.topBannerView.rootViewController = self
-        self.topAdView.addSubview(self.topBannerView)
+        self.topAdView.adUnitID = self.TOP_BANNER_ID
+        self.topAdView.rootViewController = self
     }
     
 //    private func showInterstitialAd() {
@@ -114,6 +122,15 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
 //            }
 //        }
 //    }
+    
+    private func loadBannerAd() {
+        let frame = { () -> CGRect in
+            return view.frame.inset(by: view.safeAreaInsets)
+        }()
+        let viewWidth = frame.size.width
+        self.topAdView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
+        self.topAdView.load(GADRequest())
+    }
 
     private func setupLabels() {
         self.countDownTime = 10.0
