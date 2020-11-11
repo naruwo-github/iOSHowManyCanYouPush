@@ -20,6 +20,7 @@ class HPResultModalViewController: UIViewController, GADBannerViewDelegate {
     @IBOutlet private weak var closeButton: UIButton!
     @IBOutlet private weak var centerView: UIView!
     @IBOutlet private weak var updateRecordView: UIView!
+    @IBOutlet private weak var updateRecordLabel: UILabel!
     @IBOutlet private weak var tappedCountLabel: UILabel!
     @IBOutlet private weak var preHighScoreLabel: UILabel!
     @IBOutlet private weak var rankingButton: UIButton!
@@ -75,7 +76,7 @@ class HPResultModalViewController: UIViewController, GADBannerViewDelegate {
     
     @IBAction private func shareButtonTapped(_ sender: Any) {
         let text = "\(self.tappedCount) pushed in 10 seconds！"
-        let urlString = "https://www.apple.com/jp/app-store/"
+        let urlString = "https://www.apple.com/jp/app-store/" // TODO: ここをアプリのページにする
         let image = R.image.appicon_for_share()!
         self.showActivityView(shareText: text, showWebSite: urlString, shareImage: image)
     }
@@ -113,14 +114,20 @@ class HPResultModalViewController: UIViewController, GADBannerViewDelegate {
         self.centerView.layer.cornerRadius = 10
         
         self.updateRecordView.layer.cornerRadius = 30
+        self.updateRecordLabel.font = UIDevice.current.userInterfaceIdiom == .pad
+            ? UIFont.systemFont(ofSize: 40) : UIFont.systemFont(ofSize: 20)
         
         self.tappedCountLabel.text = self.tappedCount.description
+        self.tappedCountLabel.font = UIDevice.current.userInterfaceIdiom == .pad
+            ? UIFont.systemFont(ofSize: 300) : UIFont.systemFont(ofSize: 150)
         
         if HPUserHelper.bestScore < self.tappedCount {
             self.preHighScoreLabel.text = "Your best score was \(HPUserHelper.bestScore)."
         } else {
             self.preHighScoreLabel.text = "Your best score is \(HPUserHelper.bestScore)."
         }
+        self.preHighScoreLabel.font = UIDevice.current.userInterfaceIdiom == .pad
+            ? UIFont.systemFont(ofSize: 50) : UIFont.systemFont(ofSize: 25)
     }
     
     private func saveHighScoreAndShowAnimation() {

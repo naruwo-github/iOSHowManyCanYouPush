@@ -15,6 +15,7 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
 
     private let gameHelper = HPGameCenterHelper()
     private let TOP_BANNER_ID = "ca-app-pub-3940256099942544/2934735716"// 本番:  "ca-app-pub-6492692627915720/4410584383"
+    private let BOTTOM_BANNER_ID = "ca-app-pub-3940256099942544/2934735716"// 本番: "ca-app-pub-6492692627915720/1570714342"
 //    private var interstitial: GADInterstitial!
 //    private let INTERSTITIAL_ID = "ca-app-pub-3940256099942544/5135589807"// 本番: "ca-app-pub-6492692627915720/8211310163"
     
@@ -23,6 +24,7 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
     @IBOutlet private weak var countingLabel: UILabel!
     @IBOutlet private weak var highScoreLabel: UILabel!
     @IBOutlet private weak var pushButton: UIButton!
+    @IBOutlet private weak var bottomAdView: GADBannerView!
     
     private var countDownTime: Float = 10.0
     private var tappedCount: Int = 0
@@ -110,6 +112,8 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
         
         self.topAdView.adUnitID = self.TOP_BANNER_ID
         self.topAdView.rootViewController = self
+        self.bottomAdView.adUnitID = self.BOTTOM_BANNER_ID
+        self.bottomAdView.rootViewController = self
     }
     
 //    private func showInterstitialAd() {
@@ -130,14 +134,22 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
         let viewWidth = frame.size.width
         self.topAdView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
         self.topAdView.load(GADRequest())
+        self.bottomAdView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
+        self.bottomAdView.load(GADRequest())
     }
 
     private func setupLabels() {
         self.countDownTime = 10.0
         self.countDownLabel.text = countDownTime.description
+        self.countDownLabel.font = UIDevice.current.userInterfaceIdiom == .pad
+            ? UIFont.systemFont(ofSize: 130) : UIFont.systemFont(ofSize: 65)
         self.tappedCount = 0
         self.countingLabel.text = tappedCount.description
+        self.countingLabel.font = UIDevice.current.userInterfaceIdiom == .pad
+            ? UIFont.systemFont(ofSize: 440) : UIFont.systemFont(ofSize: 220)
         self.highScoreLabel.text = "High Score: \(HPUserHelper.bestScore)"
+        self.highScoreLabel.font = UIDevice.current.userInterfaceIdiom == .pad
+            ? UIFont.systemFont(ofSize: 40) : UIFont.systemFont(ofSize: 20)
     }
     
     private func setupButton() {

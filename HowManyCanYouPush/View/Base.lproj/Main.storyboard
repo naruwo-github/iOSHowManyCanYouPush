@@ -103,6 +103,9 @@
                                     <constraint firstAttribute="trailing" secondItem="lc0-an-r9z" secondAttribute="trailing" id="vB9-AY-8R7"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IY8-CS-jh2" userLabel="Bottom Ad View" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -112,12 +115,17 @@
                             <constraint firstItem="scu-lX-2zj" firstAttribute="top" secondItem="v2v-EP-xJl" secondAttribute="bottom" id="GQI-IZ-5JZ"/>
                             <constraint firstItem="scu-lX-2zj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="M5z-Pb-nJL"/>
                             <constraint firstItem="v2v-EP-xJl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Plv-v6-Rcf"/>
+                            <constraint firstItem="IY8-CS-jh2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Q5R-WZ-B3P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IY8-CS-jh2" secondAttribute="trailing" id="Xcl-mh-hfQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="scu-lX-2zj" secondAttribute="trailing" id="Y9k-rL-fA7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IY8-CS-jh2" secondAttribute="bottom" id="cp2-Gz-Mr3"/>
                             <constraint firstItem="v2v-EP-xJl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nbq-6J-9Fw"/>
+                            <constraint firstItem="IY8-CS-jh2" firstAttribute="top" secondItem="scu-lX-2zj" secondAttribute="bottom" id="sjM-s8-7dn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="scu-lX-2zj" secondAttribute="bottom" constant="50" id="t6Q-19-S8W"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomAdView" destination="IY8-CS-jh2" id="hd6-P7-r6Y"/>
                         <outlet property="countDownLabel" destination="wAi-ZZ-JAh" id="Nyy-3Y-AoL"/>
                         <outlet property="countingLabel" destination="dEr-Sv-PDe" id="oBd-14-1Nm"/>
                         <outlet property="highScoreLabel" destination="0AA-Cs-h2x" id="ITY-XE-N1K"/>
@@ -278,6 +286,7 @@
                         <outlet property="rankingButton" destination="aMo-aE-RC0" id="lgw-iB-A77"/>
                         <outlet property="shareButton" destination="jXO-Xn-YTl" id="j7L-Fx-G2Y"/>
                         <outlet property="tappedCountLabel" destination="zqj-uJ-Vmx" id="bWD-K2-cRc"/>
+                        <outlet property="updateRecordLabel" destination="fhr-Ce-ZlZ" id="cCM-xx-Jva"/>
                         <outlet property="updateRecordView" destination="p8a-f6-gV9" id="kxA-CV-2CJ"/>
                     </connections>
                 </viewController>
