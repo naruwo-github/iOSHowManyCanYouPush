@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -54,12 +55,27 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFv-yo-x6l">
+                                                <rect key="frame" x="222" y="240" width="143" height="36"/>
+                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="See Ranking">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="rankingButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BDG-WC-diy"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="0AA-Cs-h2x" secondAttribute="bottom" constant="10" id="JZv-8F-5iy"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0AA-Cs-h2x" secondAttribute="trailing" constant="20" symbolic="YES" id="WbB-1O-0sr"/>
                                             <constraint firstItem="0AA-Cs-h2x" firstAttribute="leading" secondItem="shD-47-rep" secondAttribute="leading" constant="10" id="dKi-bh-ymp"/>
+                                            <constraint firstAttribute="trailing" secondItem="dFv-yo-x6l" secondAttribute="trailing" constant="10" id="dZi-pl-bjX"/>
                                             <constraint firstItem="dEr-Sv-PDe" firstAttribute="centerX" secondItem="shD-47-rep" secondAttribute="centerX" id="eQC-wn-kRw"/>
+                                            <constraint firstItem="dFv-yo-x6l" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="shD-47-rep" secondAttribute="leading" id="j6U-w7-7aX"/>
+                                            <constraint firstItem="dFv-yo-x6l" firstAttribute="width" secondItem="0AA-Cs-h2x" secondAttribute="width" multiplier="1.2" id="nZu-ce-wpW"/>
+                                            <constraint firstItem="dFv-yo-x6l" firstAttribute="centerY" secondItem="0AA-Cs-h2x" secondAttribute="centerY" id="wLW-lO-6c2"/>
                                             <constraint firstItem="dEr-Sv-PDe" firstAttribute="centerY" secondItem="shD-47-rep" secondAttribute="centerY" constant="-20" id="yhI-kg-Afs"/>
                                         </constraints>
                                     </view>
@@ -130,6 +146,7 @@
                         <outlet property="countingLabel" destination="dEr-Sv-PDe" id="oBd-14-1Nm"/>
                         <outlet property="highScoreLabel" destination="0AA-Cs-h2x" id="ITY-XE-N1K"/>
                         <outlet property="pushButton" destination="kVG-zb-8GQ" id="slY-w0-lgI"/>
+                        <outlet property="rankingButton" destination="dFv-yo-x6l" id="ntu-IY-qaD"/>
                         <outlet property="topAdView" destination="v2v-EP-xJl" id="xB0-hf-iFh"/>
                     </connections>
                 </viewController>

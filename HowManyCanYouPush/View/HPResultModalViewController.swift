@@ -188,6 +188,7 @@ class HPResultModalViewController: UIViewController, GADBannerViewDelegate {
     
 }
 
+// MARK: - Game Center画面の関数を扱うための拡張
 extension HPResultModalViewController: GKGameCenterControllerDelegate {
     
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
