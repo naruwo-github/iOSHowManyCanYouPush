@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import GameKit
 
 import GoogleMobileAds
 
@@ -23,6 +24,7 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
     @IBOutlet private weak var countDownLabel: UILabel!
     @IBOutlet private weak var countingLabel: UILabel!
     @IBOutlet private weak var highScoreLabel: UILabel!
+    @IBOutlet private weak var rankingButton: UIButton!
     @IBOutlet private weak var pushButton: UIButton!
     @IBOutlet private weak var bottomAdView: GADBannerView!
     
@@ -82,6 +84,9 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
         }
     }
     
+    @IBAction private func rankingButtonTapped(_ sender: Any) {
+        self.gameHelper.showRanking(_self: self)
+    }
     // MARK: - プライベート関数
     
     @objc private func timer() {
@@ -161,6 +166,15 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
         self.pushButton.layer.shadowColor = UIColor.black.cgColor
         self.pushButton.layer.shadowRadius = 4.0
         self.pushButton.layer.shadowOpacity = 0.4
+        
+        let buttonSideHeight = self.rankingButton.frame.height
+        self.rankingButton.layer.cornerRadius = buttonSideHeight / 2.0
+        self.rankingButton.clipsToBounds = false
+        self.rankingButton.layer.masksToBounds = false
+        self.rankingButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        self.rankingButton.layer.shadowColor = UIColor.black.cgColor
+        self.rankingButton.layer.shadowRadius = 4.0
+        self.rankingButton.layer.shadowOpacity = 0.4
     }
     
     private func playTappedSound() {
@@ -200,5 +214,14 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
 //    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
 //      print("interstitialWillLeaveApplication")
 //    }
+    
+}
+
+// MARK: - Game Center画面の関数を扱うための拡張
+extension HPViewController: GKGameCenterControllerDelegate {
+    
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismiss(animated: true, completion: nil)
+    }
     
 }
