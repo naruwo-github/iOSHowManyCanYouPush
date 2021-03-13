@@ -54,10 +54,9 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if #available(iOS 14, *) {
+        if #available(iOS 14, *) { // iOS14.0以降
             switch ATTrackingManager.trackingAuthorizationStatus {
             case .authorized:
-                print("Allow Tracking")
                 print("IDFA: \(ASIdentifierManager.shared().advertisingIdentifier)")
             case .denied:
                 print("😭拒否")
@@ -70,7 +69,6 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
             }
         } else { // iOS14未満
             if ASIdentifierManager.shared().isAdvertisingTrackingEnabled {
-                print("Allow Tracking")
                 print("IDFA: \(ASIdentifierManager.shared().advertisingIdentifier)")
             } else {
                 print("🥺制限")
