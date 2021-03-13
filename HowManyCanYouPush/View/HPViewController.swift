@@ -5,8 +5,10 @@
 //  Created by Narumi Nogawa on 2020/11/03.
 //
 
-import UIKit
+import AdSupport
+import AppTrackingTransparency
 import AVFoundation
+import UIKit
 import GameKit
 
 import GoogleMobileAds
@@ -51,6 +53,28 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        if #available(iOS 14, *) { // iOS14.0以降
+            switch ATTrackingManager.trackingAuthorizationStatus {
+            case .authorized:
+                print("IDFA: \(ASIdentifierManager.shared().advertisingIdentifier)")
+            case .denied:
+                print("😭拒否")
+            case .restricted:
+                print("🥺制限")
+            case .notDetermined:
+                self.showRequestTrackingAuthorizationAlert()
+            @unknown default:
+                fatalError()
+            }
+        } else { // iOS14未満
+            if ASIdentifierManager.shared().isAdvertisingTrackingEnabled {
+                print("IDFA: \(ASIdentifierManager.shared().advertisingIdentifier)")
+            } else {
+                print("🥺制限")
+            }
+        }
+        
         self.loadBannerAd()
     }
     
@@ -88,6 +112,23 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
         self.gameHelper.showRanking(_self: self)
     }
     // MARK: - プライベート関数
+    
+    // Alert表示の関数
+    private func showRequestTrackingAuthorizationAlert() {
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                switch status {
+                case .authorized:
+                    print("🎉")
+                    print("IDFA: \(ASIdentifierManager.shared().advertisingIdentifier)")
+                case .denied, .restricted, .notDetermined:
+                    print("😭")
+                @unknown default:
+                    fatalError()
+                }
+            })
+        }
+    }
     
     @objc private func timer() {
         if self.countDownTime > 0.0 {
