@@ -5,6 +5,8 @@
 //  Created by Narumi Nogawa on 2020/11/03.
 //
 
+import AdSupport
+import AppTrackingTransparency
 import UIKit
 
 import Firebase
@@ -17,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         GADMobileAds.sharedInstance().start(completionHandler: nil)
+        self.requestIDFA()
         
         let key = "startUpCount"
         HPUserHelper.save(key, value: HPUserHelper.load(key, returnClass: Int.self) ?? 0 + 1)
@@ -28,6 +31,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+    }
+    
+    private func requestIDFA() {
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in })
+        }
     }
 
     // MARK: UISceneSession Lifecycle
