@@ -16,10 +16,10 @@ final class HPGameCenterHelper {
     
     // ゲームセンターのログイン処理
     func authenticateLocalPlayer(_self: UIViewController) {
-        let player = GKLocalPlayer.local //ログイン確認画面の作成
-        player.authenticateHandler = {(viewController, error) -> Void in
-            //GameCenterに認証されていない時、viewControllerに認証画面が入ってくるので、
-            //それを表示させれば認証処理が簡単にできる
+        let player = GKLocalPlayer.local // ログイン確認画面の作成
+        player.authenticateHandler = {(viewController, _/*error*/) -> Void in
+            // GameCenterに認証されていない時、viewControllerに認証画面が入ってくるので、
+            // それを表示させれば認証処理が簡単にできる
             if viewController != nil {
                 _self.present(viewController!, animated: true, completion: nil)
             }
@@ -35,7 +35,7 @@ final class HPGameCenterHelper {
     }
     
     // 最高スコアを送信する
-    func sendLeaderboard(_ id: String = "PushALotBoard", rate: Int64, _self: UIViewController) -> Void {
+    func sendLeaderboard(_ id: String = "PushALotBoard", rate: Int64, _self: UIViewController) {
         let score = GKScore(leaderboardIdentifier: id)
         if GKLocalPlayer.local.isAuthenticated {
             score.value = rate
