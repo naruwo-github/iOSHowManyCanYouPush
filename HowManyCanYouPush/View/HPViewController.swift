@@ -5,8 +5,6 @@
 //  Created by Narumi Nogawa on 2020/11/03.
 //
 
-import AdSupport
-import AppTrackingTransparency
 import AVFoundation
 import UIKit
 import GameKit
@@ -19,8 +17,10 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
     private let gameHelper = HPGameCenterHelper()
     private let TOP_BANNER_ID = "ca-app-pub-6492692627915720/4410584383"
     private let BOTTOM_BANNER_ID = "ca-app-pub-6492692627915720/1570714342"
-//    private var interstitial: GADInterstitial!
-//    private let INTERSTITIAL_ID = "ca-app-pub-3940256099942544/5135589807"// 本番: "ca-app-pub-6492692627915720/8211310163"
+    
+    private var interstitial: GADInterstitialAd?
+    private let INTERSTITIAL_ID = "ca-app-pub-6492692627915720/8211310163"
+    private let interstitialKey = "showInterstitialCounter"
     
     @IBOutlet private weak var topAdView: GADBannerView!
     @IBOutlet private weak var countDownLabel: UILabel!
@@ -41,6 +41,7 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupAd()
+        self.loadBannerAd()
         
         self.setupLabels()
         self.setupButton()
@@ -49,33 +50,6 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.gameHelper.authenticateLocalPlayer(_self: self)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if #available(iOS 14, *) { // iOS14.0以降
-            switch ATTrackingManager.trackingAuthorizationStatus {
-            case .authorized:
-                print("IDFA: \(ASIdentifierManager.shared().advertisingIdentifier)")
-            case .denied:
-                print("😭拒否")
-            case .restricted:
-                print("🥺制限")
-            case .notDetermined:
-                self.showRequestTrackingAuthorizationAlert()
-            @unknown default:
-                fatalError()
-            }
-        } else { // iOS14未満
-            if ASIdentifierManager.shared().isAdvertisingTrackingEnabled {
-                print("IDFA: \(ASIdentifierManager.shared().advertisingIdentifier)")
-            } else {
-                print("🥺制限")
-            }
-        }
-        
-        self.loadBannerAd()
     }
     
     override func viewWillTransition(to size: CGSize,
@@ -113,23 +87,6 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
     }
     // MARK: - プライベート関数
     
-    // Alert表示の関数
-    private func showRequestTrackingAuthorizationAlert() {
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-                switch status {
-                case .authorized:
-                    print("🎉")
-                    print("IDFA: \(ASIdentifierManager.shared().advertisingIdentifier)")
-                case .denied, .restricted, .notDetermined:
-                    print("😭")
-                @unknown default:
-                    fatalError()
-                }
-            })
-        }
-    }
-    
     @objc private func timer() {
         if self.countDownTime > 0.0 {
             self.countDownTime -= 0.1
@@ -142,36 +99,43 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
             guard let resultVC = R.storyboard.main.hpResultModalViewController() else { return }
             resultVC.setup(count: self.tappedCount, completion: { [unowned self] in
                 self.setupLabels()
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { [unowned self] in
-//                    self.showInterstitialAd()
-//                })
+                self.showInterstitialAd()
             })
             self.present(resultVC, animated: true, completion: nil)
         }
     }
     
     private func setupAd() {
-        // TODO: 使い捨て考慮して再生成処理をどっかに追記するべし
-//        self.interstitial = GADInterstitial(adUnitID: self.INTERSTITIAL_ID)
-//        self.interstitial.load(GADRequest())
-//        self.interstitial.delegate = self
-        
         self.topAdView.adUnitID = self.TOP_BANNER_ID
         self.topAdView.rootViewController = self
         self.bottomAdView.adUnitID = self.BOTTOM_BANNER_ID
         self.bottomAdView.rootViewController = self
+        
+        GADInterstitialAd.load(withAdUnitID: self.INTERSTITIAL_ID,
+                               request: GADRequest(),
+                               completionHandler: { [self] ad, error in
+                                if let error = error {
+                                    print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                    return
+                                }
+                                self.interstitial = ad
+                               }
+        )
     }
     
-//    private func showInterstitialAd() {
-//        guard let ad = self.interstitial else { return }
-//
-//        let backCount = HPUserHelper.backToInitialFromResultCount
-//        if backCount != 0 && backCount % 7 == 0 {
-//            if ad.isReady {
-//                ad.present(fromRootViewController: self)
-//            }
-//        }
-//    }
+    private func showInterstitialAd() {
+        let counter = UserDefaults.standard.integer(forKey: self.interstitialKey)
+        if counter == 5 {
+            UserDefaults.standard.set(0, forKey: self.interstitialKey)
+            if self.interstitial != nil {
+                self.interstitial!.present(fromRootViewController: self)
+            } else {
+                print("Ad wasn't ready")
+            }
+        } else {
+            UserDefaults.standard.set(counter + 1, forKey: self.interstitialKey)
+        }
+    }
     
     private func loadBannerAd() {
         let frame = { () -> CGRect in

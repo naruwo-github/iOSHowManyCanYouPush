@@ -7,7 +7,7 @@ target 'HowManyCanYouPush' do
   pod 'Firebase/Crashlytics'
   pod 'Firebase/Analytics'
   pod 'Firebase/Core'
-  pod 'Firebase/AdMob'
+  pod 'Google-Mobile-Ads-SDK'
   pod 'R.swift'
   pod 'SwiftLint'
 

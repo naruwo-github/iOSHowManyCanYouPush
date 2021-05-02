@@ -47,11 +47,9 @@ class HPResultModalViewController: UIViewController, GADBannerViewDelegate {
         self.loadBannerAd()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         
-        let backCount = HPUserHelper.backToInitialFromResultCount
-        HPUserHelper.backToInitialFromResultCount = backCount + 1
         self.dismissCompletion?()
     }
     
@@ -76,7 +74,7 @@ class HPResultModalViewController: UIViewController, GADBannerViewDelegate {
     
     @IBAction private func shareButtonTapped(_ sender: Any) {
         let text = "\(self.tappedCount) pushed in 10 seconds！"
-        let urlString = "https://www.apple.com/jp/app-store/" // TODO: ここをアプリのページにする
+        let urlString = "https://apps.apple.com/pk/app/push-a-lot/id1539802973"
         let image = R.image.appicon_for_share()!
         self.showActivityView(shareText: text, showWebSite: urlString, shareImage: image)
     }
