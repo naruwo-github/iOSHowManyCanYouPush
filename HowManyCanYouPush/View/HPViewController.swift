@@ -17,8 +17,10 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
     private let gameHelper = HPGameCenterHelper()
     private let TOP_BANNER_ID = "ca-app-pub-6492692627915720/4410584383"
     private let BOTTOM_BANNER_ID = "ca-app-pub-6492692627915720/1570714342"
-//    private var interstitial: GADInterstitial!
-//    private let INTERSTITIAL_ID = "ca-app-pub-3940256099942544/5135589807"// 本番: "ca-app-pub-6492692627915720/8211310163"
+    
+    private var interstitial: GADInterstitialAd?
+    private let INTERSTITIAL_ID = "ca-app-pub-6492692627915720/8211310163"
+    private let interstitialKey = "showInterstitialCounter"
     
     @IBOutlet private weak var topAdView: GADBannerView!
     @IBOutlet private weak var countDownLabel: UILabel!
@@ -106,27 +108,36 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
     }
     
     private func setupAd() {
-        // TODO: 使い捨て考慮して再生成処理をどっかに追記するべし
-//        self.interstitial = GADInterstitial(adUnitID: self.INTERSTITIAL_ID)
-//        self.interstitial.load(GADRequest())
-//        self.interstitial.delegate = self
-        
         self.topAdView.adUnitID = self.TOP_BANNER_ID
         self.topAdView.rootViewController = self
         self.bottomAdView.adUnitID = self.BOTTOM_BANNER_ID
         self.bottomAdView.rootViewController = self
+        
+        GADInterstitialAd.load(withAdUnitID: self.INTERSTITIAL_ID,
+                               request: GADRequest(),
+                               completionHandler: { [self] ad, error in
+                                if let error = error {
+                                    print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                                    return
+                                }
+                                self.interstitial = ad
+                               }
+        )
     }
     
-//    private func showInterstitialAd() {
-//        guard let ad = self.interstitial else { return }
-//
-//        let backCount = HPUserHelper.backToInitialFromResultCount
-//        if backCount != 0 && backCount % 7 == 0 {
-//            if ad.isReady {
-//                ad.present(fromRootViewController: self)
-//            }
-//        }
-//    }
+    private func showInterstitialAd() {
+        let counter = UserDefaults.standard.integer(forKey: self.interstitialKey)
+        if counter == 5 {
+            UserDefaults.standard.set(0, forKey: self.interstitialKey)
+            if self.interstitial != nil {
+                self.interstitial!.present(fromRootViewController: self)
+            } else {
+                print("Ad wasn't ready")
+            }
+        } else {
+            UserDefaults.standard.set(counter + 1, forKey: self.interstitialKey)
+        }
+    }
     
     private func loadBannerAd() {
         let frame = { () -> CGRect in
