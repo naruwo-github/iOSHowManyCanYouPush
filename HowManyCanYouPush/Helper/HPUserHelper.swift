@@ -12,7 +12,6 @@ class HPUserHelper {
     
     enum CounterKey: String {
         case bestScore = "score"
-        case backToInitialFromResultCount = "backToInitialScreenFromResultScreen"
     }
     
     class func sync() {
@@ -56,16 +55,6 @@ class HPUserHelper {
         }
         set {
             HPUserHelper.save(HPUserHelper.CounterKey.bestScore.rawValue, value: newValue)
-        }
-    }
-    
-    // 結果画面から初期画面に戻ってきた回数
-    static var backToInitialFromResultCount: Int {
-        get {
-            return HPUserHelper.load(HPUserHelper.CounterKey.backToInitialFromResultCount.rawValue, returnClass: Int.self) ?? 0
-        }
-        set {
-            HPUserHelper.save(HPUserHelper.CounterKey.backToInitialFromResultCount.rawValue, value: newValue)
         }
     }
     

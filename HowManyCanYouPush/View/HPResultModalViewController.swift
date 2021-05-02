@@ -47,11 +47,9 @@ class HPResultModalViewController: UIViewController, GADBannerViewDelegate {
         self.loadBannerAd()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         
-        let backCount = HPUserHelper.backToInitialFromResultCount
-        HPUserHelper.backToInitialFromResultCount = backCount + 1
         self.dismissCompletion?()
     }
     

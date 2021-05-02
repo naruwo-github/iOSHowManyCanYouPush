@@ -99,9 +99,7 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
             guard let resultVC = R.storyboard.main.hpResultModalViewController() else { return }
             resultVC.setup(count: self.tappedCount, completion: { [unowned self] in
                 self.setupLabels()
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: { [unowned self] in
-//                    self.showInterstitialAd()
-//                })
+                self.showInterstitialAd()
             })
             self.present(resultVC, animated: true, completion: nil)
         }
