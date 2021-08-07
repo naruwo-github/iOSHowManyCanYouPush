@@ -100,6 +100,7 @@
 		028091D2BC87C98DA7F3FAC5A88D513D /* GDTCOREvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1BAE994B3F679D2EF3D6C5A8535403 /* GDTCOREvent.m */; };
 		02AB25C51FD7347ED4233490EBF95B8F /* FBLPromises.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FDB77B9F1081323B8F58D0D401FF40 /* FBLPromises.framework */; };
 		0337403C959D97579D9581DF913C8939 /* GoogleUtilities-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A67435E4AA6F4841FC13F7541D15169 /* GoogleUtilities-dummy.m */; };
+		0397BC872E50F9CA610C61A6356DC4CA /* FBLPromises.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FDB77B9F1081323B8F58D0D401FF40 /* FBLPromises.framework */; };
 		046B01896CE145C9C220F6A175878E87 /* FIRCLSUserLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA732C1256231E368303BD3D4E73D75 /* FIRCLSUserLogging.m */; };
 		04D65311920B641ACA7330B98449EDA0 /* FBLPromise+Timeout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BFFF7F7B80F51B9D3C8CD36C4C56D82 /* FBLPromise+Timeout.m */; };
 		04FF9356EEC6BFD83B70EBBF7A381253 /* FIRHeartbeatInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = F69CD8559846BBE905E29D0E51D51073 /* FIRHeartbeatInfo.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -137,11 +138,11 @@
 		1C1CE5A0F25692A8B28806838823B791 /* GDTCORTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = D898DF6770D3F2579482A91F4CEF8028 /* GDTCORTransport.m */; };
 		1C2F97A447B215D21C4C220F0D683869 /* GDTCOREventTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = CD8A3EA6F4EC433BE2100284205AEB86 /* GDTCOREventTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D98703F2F33D84358749631AC16A297 /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C2CC9971D0BC515895D670EC037217 /* Validatable.swift */; };
-		1DDA7CA15999EF6081E8283681577398 /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6F27D7DF1D1D79A14AE419F621DBC4B /* GoogleDataTransport.framework */; };
 		1F0127DE62F904CBFEB893A4306CF62D /* FIRCLSUnwind_x86.h in Headers */ = {isa = PBXBuildFile; fileRef = F32C8E18C5D489EB0FE0AB53F57585A4 /* FIRCLSUnwind_x86.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		1F17549B1449254BEB0E2066D85DD43A /* FIRCrashlytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C84CB32C4C44660BAF745AACD5C9609 /* FIRCrashlytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FA9BC3D3F1CF5E8A0BAD9E2415B2C50 /* GDTCORTransformer_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 991458C428B9D02402E25A51F2589562 /* GDTCORTransformer_Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		1FF1DD77E5D21DBC3CF71BD2224745AD /* FIRCLSInternalLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 37B698C7EB396A166E3B097DC2CA65E8 /* FIRCLSInternalLogging.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		200BC985097CF76AF9CF714825FD0F21 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EECB4B0F0DC2C8343856EB21340658B /* nanopb.framework */; };
 		20AE0D5B005EDC9FA7C29C36EFFD1171 /* FIRCLSReportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B8280B735DD885A9358BC2DF22E49ED7 /* FIRCLSReportManager.m */; };
 		20DBD1AF4BF2A2EADFCE6B5498BAD4B3 /* FIRCLSdSYM.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C902EDF500CC1C0952C9B83A48ECF1 /* FIRCLSdSYM.m */; };
 		20E6A17F5E3B5AB71431DD06FD5E906A /* FIRInstallationsSingleOperationPromiseCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0394B18D1E79C4E037974EB45160EEDE /* FIRInstallationsSingleOperationPromiseCache.m */; };
@@ -173,6 +174,7 @@
 		2D37CE946BDE2119CF3CCFFEFEB055FC /* FIRCLSAllocate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6827D82FB8A5ADC0B76442EFC2AC35F1 /* FIRCLSAllocate.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		2DD78037EB30EB1BA0BE9D4857763E5B /* FIRCLSThreadArrayOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0483BE5B169C19FEDACACE9A2F84E2 /* FIRCLSThreadArrayOperation.m */; };
 		2E1ACBED666C602DD4F5FEAB756A9FEA /* UIColor+ColorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ACEE98E7B19E1BC53B78DA2CE6CA0A /* UIColor+ColorResource.swift */; };
+		2EAE10F2382E91AD0DCCF9C5262FEA08 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ABE7397FB0526975B803287F6D616D7 /* GoogleUtilities.framework */; };
 		2EC27EF51C8A6CEF0031F136767BD5E4 /* GDTCORClock.m in Sources */ = {isa = PBXBuildFile; fileRef = DD974A26D3EFE8A99622EAC70DEAFA62 /* GDTCORClock.m */; };
 		2F5ED27A98FC635DE7BAF8F2423AF622 /* GDTCORClock.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F8D539218DE42281351FECA42C2EA81 /* GDTCORClock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30109086F84B4E2A2E2F22593E38EFCA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B177169BB93DA922CF8857CA6D69859D /* Foundation.framework */; };
@@ -199,7 +201,6 @@
 		3ABB0829135C430F1911E79507A92A19 /* FBLPromise+Timeout.h in Copy . Public Headers */ = {isa = PBXBuildFile; fileRef = A88AAD1A8679D824089DC7EE63456EC9 /* FBLPromise+Timeout.h */; };
 		3C80C8C927850E9978157ACA4CCA5A06 /* GoogleDataTransport-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6086EED2D2DDEB5A5264C68EFBB9339F /* GoogleDataTransport-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CF60B0665BCCC4F538A1A99DE89C2B5 /* ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE83A970246C1558220B29659E660BA9 /* ImageResource.swift */; };
-		3D45A3D6BA61D46C7E1A60C03771BAEC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB52E1780620130AE6CB0C021281485 /* SystemConfiguration.framework */; };
 		3D57CB8C0228BFF4CB0C51E3BE3F9911 /* FIRCLSUnwind_x86.c in Sources */ = {isa = PBXBuildFile; fileRef = B52869277788994BE905FC9C4964475A /* FIRCLSUnwind_x86.c */; };
 		3D61B9D6A9C400986B78E6B7176D6802 /* pb.h in Headers */ = {isa = PBXBuildFile; fileRef = 04209685DCD57DABC01B10AC61F356A7 /* pb.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3D74F7DC7E6289222BA0870DDA920117 /* FBLPromise+Validate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7485C5FA0D287E39A46DF40BD95059EB /* FBLPromise+Validate.m */; };
@@ -207,8 +208,8 @@
 		3DC6089697128C95F6438ABB1B384C40 /* FIRComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 2625F9D3665ACF506C5AC112D52F7EE7 /* FIRComponent.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		3DCB1A2838D4489142A2ABA129B57F63 /* GULSceneDelegateSwizzler.h in Headers */ = {isa = PBXBuildFile; fileRef = 97C5E2BB5A0B0826A0BA11F4C4DDBB11 /* GULSceneDelegateSwizzler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3DEAA5FC49C18F5C5A1DD06555615377 /* GULHeartbeatDateStorable.h in Headers */ = {isa = PBXBuildFile; fileRef = 08C4CBA73543AACDEFE570DBAD450357 /* GULHeartbeatDateStorable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3EB216D40B5F116CCFFEC835836082BF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB52E1780620130AE6CB0C021281485 /* SystemConfiguration.framework */; };
 		3F894ABEA2F1FFA7214318C96855ED91 /* FBLPromise+Wrap.h in Headers */ = {isa = PBXBuildFile; fileRef = 840AD1CFDA7E0FBA9A2454F378294C2D /* FBLPromise+Wrap.h */; };
-		401BB06B77A38F96CE40EC7E8A84118D /* FBLPromises.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FDB77B9F1081323B8F58D0D401FF40 /* FBLPromises.framework */; };
 		404C9B517B86166371427B7AAC102207 /* GULAppDelegateSwizzler.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FA90A850BFCE50B62BCCE43F5581ACC /* GULAppDelegateSwizzler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41136483AE1A471E4C33BBCE9DDD9C97 /* FIRFirebaseUserAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F21E2C4E941B92436225164C0EB012A /* FIRFirebaseUserAgent.m */; };
 		414404D9566B6A5FA6FD3614C38EB3B3 /* GULReachabilityChecker+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = DB17DB259A09F70A1D6E8ADA63AE1852 /* GULReachabilityChecker+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -261,7 +262,6 @@
 		56B7A357893C9140CC5D479253035F88 /* FIRCLSAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EA53911DD92360DC7D7437CA0AF9E3AE /* FIRCLSAsyncOperation.m */; };
 		577C33D2C9320076249655171494E54B /* FIRCLSLaunchMarkerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A281EC8B904B2053A65DF8019C63F41A /* FIRCLSLaunchMarkerModel.m */; };
 		57A9D82D541F250CAF63D568BA4E6D9B /* GDTCOREvent.h in Headers */ = {isa = PBXBuildFile; fileRef = F45B2778A716E72852F6E7AC9F27D217 /* GDTCOREvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		57D17D4B77DF37E955F5DD1DC549277E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B177169BB93DA922CF8857CA6D69859D /* Foundation.framework */; };
 		58AA0DCF342B7CDEABAAE975B9247810 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EECB4B0F0DC2C8343856EB21340658B /* nanopb.framework */; };
 		5981ABA951EE4EAD8D6CD3C80D3C7C54 /* FBLPromise+Race.h in Copy . Public Headers */ = {isa = PBXBuildFile; fileRef = 1076E7C74A8CAE8AD6A6DE2C9A095461 /* FBLPromise+Race.h */; };
 		59881DF5449841ADDF05611E9CD6CCEB /* FIRInstallationsErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = 76314AFF5F846E91222E0CC5C03EE42C /* FIRInstallationsErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -328,7 +328,6 @@
 		79F642537538D59FF3B6AC13328C8C73 /* FIRCLSDwarfUnwind.c in Sources */ = {isa = PBXBuildFile; fileRef = 4CDD00FF23F242A232083C4CA6F9F19C /* FIRCLSDwarfUnwind.c */; };
 		7A4CA61871FAC3B06B4CDAF309F7773E /* FIRCLSURLBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 41D8DE9C47875097AF2FEF95144BB0FB /* FIRCLSURLBuilder.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		7A4DC32E3C731E42BDCF35ABA30F690D /* FBLPromise+Race.h in Headers */ = {isa = PBXBuildFile; fileRef = 1076E7C74A8CAE8AD6A6DE2C9A095461 /* FBLPromise+Race.h */; };
-		7A96C63CC83FF84E549F0EAC29B4E9BB /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EECB4B0F0DC2C8343856EB21340658B /* nanopb.framework */; };
 		7ACCC30F0BF65DAEB60F607F0A66268D /* GDTCORConsoleLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC59C9255CDB99D5B07FC76007326A /* GDTCORConsoleLogger.m */; };
 		7B79667F8DAAC9C1AE4E41FA0A3AD86B /* FIRCLSSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 39FFD33B7B746682CFC8CBE18C4DFDAD /* FIRCLSSettings.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		7BAB5B6E18129B6D199DBE7AD55B7621 /* GDTCOREventDataObject.h in Headers */ = {isa = PBXBuildFile; fileRef = C552BA2BC18AA14522CF504DFBBFFAFD /* GDTCOREventDataObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -343,6 +342,7 @@
 		7F5CE55A4030F1A5E20321DF9AF1C3C8 /* FIRCLSFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DB0FCD16C248B679646B0FF0D28BE955 /* FIRCLSFileManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		7FE1E326A070203F05B34E81FDC69607 /* FBLPromise+Always.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFADFBDF6FEAB92948C5FBDF1AB8F67 /* FBLPromise+Always.m */; };
 		8057E83C27D9F27AD92D157DBA9B096A /* FIRCLSReportAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCB32D9C563BB7646A3C2A34EFA1ABC /* FIRCLSReportAdapter.m */; };
+		807FF65F12EB54531F49C5628A33BEC8 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B598B297868A041B849CEF3CCDE649 /* FirebaseCore.framework */; };
 		808BC17A011276F72FB0369B02C2A4F0 /* FIRCLSDataCollectionArbiter.h in Headers */ = {isa = PBXBuildFile; fileRef = E876AD8F9698FCAFF35C5F320C68921E /* FIRCLSDataCollectionArbiter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		80A41D68ABCA68EBB683F8FAA0C25878 /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AAB3A1D0E72F1F80860DF0B0E6CE6F /* ReuseIdentifierProtocol.swift */; };
 		818A28327A7770433A9702ECA6D990F2 /* FIRVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = DED946B4DB615DDAC27373774FCD29EC /* FIRVersion.m */; };
@@ -414,6 +414,7 @@
 		9C85B158DAD5B7DF0232F9089B57F182 /* FIRCrashlyticsReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 64E2A3A1C25D6984418426640A4E234E /* FIRCrashlyticsReport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C8AC24CE2D1222F1859C17B48AC9C03 /* GDTCORAssert.h in Headers */ = {isa = PBXBuildFile; fileRef = A0788269B8397563994E2F51F559D548 /* GDTCORAssert.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		9CA61382E9F1CB92D3C23D266ECA8BA7 /* FIRCLSRecordBase.h in Headers */ = {isa = PBXBuildFile; fileRef = C09C8400DBA65DBBC930C9A29D33B4E8 /* FIRCLSRecordBase.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9D112B368D534D5C96D34E54287A3225 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB1587D7B4B5BF18B4219C7A6D917CC1 /* Security.framework */; };
 		9D3B63AF53C9B48AEE59C9643463CCE1 /* FIRInstallationsAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE5F5992B62A02133F81770DA27F0B3 /* FIRInstallationsAPIService.m */; };
 		9D7568985CE274E17D1B4387AF1BA583 /* FIRCLSSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 448E59EE23389CAD05DE4AD03C0F5127 /* FIRCLSSettings.m */; };
 		9DC74F81E98265D7D1DCD4F4B3120786 /* UIStoryboard+StoryboardViewControllerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D71F2213B2F485E8428D96170D035E /* UIStoryboard+StoryboardViewControllerResource.swift */; };
@@ -436,6 +437,7 @@
 		A4DE3742D3AC5D23C4EED2C8EC1D330F /* FirebaseCrashlytics-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 26A2970BEDF4EADF8A1BA417F806099C /* FirebaseCrashlytics-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A53DA805346AC61D948E8D6BE1D98831 /* FIRCLSApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = F9886C834E880F887E140DA979961D14 /* FIRCLSApplication.m */; };
 		A5694A9EE779FD94A7FA94821B37169F /* FBLPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 497523250EC8AAD9757A0EC6291211B7 /* FBLPromise.h */; };
+		A59FBF2C555CB83C9A10C7DE76C656EA /* FirebaseInstallations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492944B35F2A0A8A5A25A155F86E48D5 /* FirebaseInstallations.framework */; };
 		A5BBB802369A6E821E35BAC26F5418E5 /* FBLPromise+Any.h in Copy . Public Headers */ = {isa = PBXBuildFile; fileRef = A157C7103CE5B8899CBEF8B650288EA9 /* FBLPromise+Any.h */; };
 		A62FE0A63916A333CE42C7BCCFF79BB5 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ABE7397FB0526975B803287F6D616D7 /* GoogleUtilities.framework */; };
 		A632652B01D8CC4D792DB11C4A323F9A /* FBLPromise+Testing.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAE6F2A507B9019F07FA7F8E7B3385 /* FBLPromise+Testing.m */; };
@@ -485,12 +487,12 @@
 		B98ADBE59FA4E37B623AFE6A51E937EC /* FIRInstallationsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 521C558CBB4AC7A8E903290DA4560333 /* FIRInstallationsStore.m */; };
 		BA4C6B04F28CE8BD394A8270883AFCEA /* FBLPromise+Any.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3606D563387FB36BA267528BF3092C /* FBLPromise+Any.m */; };
 		BA748E46DE80FFEEBC5292FF82FF6667 /* FIRInstallationsStoredAuthToken.m in Sources */ = {isa = PBXBuildFile; fileRef = C42D5064619480B3B122948D3558C113 /* FIRInstallationsStoredAuthToken.m */; };
-		BAAB79B13E02DB728ACF1711E9C6C59E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB1587D7B4B5BF18B4219C7A6D917CC1 /* Security.framework */; };
 		BB569699D93044D204B47B30BB8E070D /* FIRStackFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 66593D26850D399093B3DD737012C228 /* FIRStackFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BBDB9375B3887101547A4FE14A79322C /* FBLPromise+Delay.m in Sources */ = {isa = PBXBuildFile; fileRef = F4660D09347967AD0B4F068BC776C109 /* FBLPromise+Delay.m */; };
 		BBE66FDD617341EA144194DB86CD50CC /* FIRLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B2E4624B1B7E6A358044210C5B0B477 /* FIRLibrary.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BC408BDDD048413BC0C886B9DCFA1E93 /* FIRDependency.h in Headers */ = {isa = PBXBuildFile; fileRef = B640DC90833F6C52C6E4ADC27FCBED1C /* FIRDependency.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BC5A14CA95D98ECD02E74F512722B11B /* FBLPromise+Catch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1423CA4E0FA4503A69547BF0520946C1 /* FBLPromise+Catch.m */; };
+		BC9E84BC64DA89601E33D0EE3CC55EFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B177169BB93DA922CF8857CA6D69859D /* Foundation.framework */; };
 		BCC2CB90A7DEED96E7D4CC8D4D41C713 /* FIRLoggerLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = 6349413202A38E2C371EF98FACB149E5 /* FIRLoggerLevel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BCDA5F6B16768878AF5A5C7843AD814C /* GDTCCTNanopbHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = B1CDD40B950B7BD19C1D7A68FB762D75 /* GDTCCTNanopbHelpers.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BD1C311D61C909D7EDAE2AC4BC283B2C /* FIRCLSDownloadAndSaveSettingsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0FB9433015453B77A9A5B02D3AA629 /* FIRCLSDownloadAndSaveSettingsOperation.m */; };
@@ -569,9 +571,7 @@
 		E2FC92010E10B766292AD134B1157A85 /* FIRCLSFeatures.h in Headers */ = {isa = PBXBuildFile; fileRef = 94145C3DD3E83B5E52817D2A51DFC6A6 /* FIRCLSFeatures.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		E35CDEB904270BF65535139CF8FA87B8 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EECB4B0F0DC2C8343856EB21340658B /* nanopb.framework */; };
 		E3C80CAA9F44119B682A8AC9519BA6C5 /* crashlytics.nanopb.h in Headers */ = {isa = PBXBuildFile; fileRef = 61C6698008161CE768E0EF97570436F0 /* crashlytics.nanopb.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E3ED9F88A9DDAD4BAB62F4366211E1DC /* FirebaseInstallations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492944B35F2A0A8A5A25A155F86E48D5 /* FirebaseInstallations.framework */; };
 		E5015614C2196F17886663190DDB49E3 /* FIRLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 4202AEAB71F21EA79D383762B0168988 /* FIRLibrary.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		E52085C42FD511A0F818ACA98B56EA5E /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47B598B297868A041B849CEF3CCDE649 /* FirebaseCore.framework */; };
 		E5F94CB7183F2B0595FE3BF40BF8F2EF /* FIRCLSRecordApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B11E10EEEB022834E49AFADDC20B9A0 /* FIRCLSRecordApplication.m */; };
 		E70ECDAEEB3312243524987127D0A4CD /* FIRCLSDwarfExpressionMachine.c in Sources */ = {isa = PBXBuildFile; fileRef = 7C196D8551F1102B1B386F019DE28E15 /* FIRCLSDwarfExpressionMachine.c */; };
 		E7836F5981C620D82925111AF27B141F /* FIRAppInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = EEF91EE62F0E4870B374B163E6E2B232 /* FIRAppInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -591,6 +591,7 @@
 		EC76BB498B00E4FC1C82E6986D4F6461 /* FIRInstallationsErrorUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = F4C1456D826541B403E73EA332D4FD07 /* FIRInstallationsErrorUtil.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		ECA896140A334E6F1E6FE51F433C2170 /* FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416FC381B18C29FED29F558D5BE6D749 /* FontResource.swift */; };
 		ED84EAD4C9F97B2C360A0BD9D24FF949 /* FIRCLSFABAsyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9758F4E4F91C706C7856178EC953CA /* FIRCLSFABAsyncOperation.m */; };
+		EE0155EE23FCFD0A05500C15A2D633F3 /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6F27D7DF1D1D79A14AE419F621DBC4B /* GoogleDataTransport.framework */; };
 		EE45B3F1AF0AA4E8B96D1B5E999F4B20 /* FIRCoreDiagnosticsConnector.h in Headers */ = {isa = PBXBuildFile; fileRef = CC7B893454CD5A3F72483A793B0EFC1F /* FIRCoreDiagnosticsConnector.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		EE936384D48312327D654CC63F3510CC /* FIRCLSSymbolResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FB37178F9BECCAB09284B655451477 /* FIRCLSSymbolResolver.m */; };
 		EFEBC555249922085B32107AF59FC134 /* GULSwizzler.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A4299FC4C6C2C41ADA3ACA295364E0E /* GULSwizzler.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -830,6 +831,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = D2B5E7DCCBBFB32341D857D01211A1A3;
 			remoteInfo = nanopb;
+		};
+		A16D825FCC3230EA4D8E5ECCC55CD32D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D7F5D5DD528D21A72DC87ADA5B12E2D;
+			remoteInfo = GoogleUtilities;
 		};
 		A54FAD549E75B9BC719FC6AE09A957F5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1622,21 +1630,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D6B45D309CBD7734C616F059F5A6F278 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				401BB06B77A38F96CE40EC7E8A84118D /* FBLPromises.framework in Frameworks */,
-				E52085C42FD511A0F818ACA98B56EA5E /* FirebaseCore.framework in Frameworks */,
-				E3ED9F88A9DDAD4BAB62F4366211E1DC /* FirebaseInstallations.framework in Frameworks */,
-				57D17D4B77DF37E955F5DD1DC549277E /* Foundation.framework in Frameworks */,
-				1DDA7CA15999EF6081E8283681577398 /* GoogleDataTransport.framework in Frameworks */,
-				7A96C63CC83FF84E549F0EAC29B4E9BB /* nanopb.framework in Frameworks */,
-				BAAB79B13E02DB728ACF1711E9C6C59E /* Security.framework in Frameworks */,
-				3D45A3D6BA61D46C7E1A60C03771BAEC /* SystemConfiguration.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DA8CA981DFA7CE629E005472C9A508E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1675,6 +1668,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				30109086F84B4E2A2E2F22593E38EFCA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE92D059AF222669A5DCC774FD4EC394 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0397BC872E50F9CA610C61A6356DC4CA /* FBLPromises.framework in Frameworks */,
+				807FF65F12EB54531F49C5628A33BEC8 /* FirebaseCore.framework in Frameworks */,
+				A59FBF2C555CB83C9A10C7DE76C656EA /* FirebaseInstallations.framework in Frameworks */,
+				BC9E84BC64DA89601E33D0EE3CC55EFE /* Foundation.framework in Frameworks */,
+				EE0155EE23FCFD0A05500C15A2D633F3 /* GoogleDataTransport.framework in Frameworks */,
+				2EAE10F2382E91AD0DCCF9C5262FEA08 /* GoogleUtilities.framework in Frameworks */,
+				200BC985097CF76AF9CF714825FD0F21 /* nanopb.framework in Frameworks */,
+				9D112B368D534D5C96D34E54287A3225 /* Security.framework in Frameworks */,
+				3EB216D40B5F116CCFFEC835836082BF /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3144,7 +3153,7 @@
 			buildPhases = (
 				7E3BD59AECF4F361C49417CCDE3394C6 /* Headers */,
 				B0A4AA0EE9EF8FB775D0715C1BE067CE /* Sources */,
-				D6B45D309CBD7734C616F059F5A6F278 /* Frameworks */,
+				FE92D059AF222669A5DCC774FD4EC394 /* Frameworks */,
 				6C4A34891EBE93754F6EC7A6A3844C11 /* Resources */,
 			);
 			buildRules = (
@@ -3153,6 +3162,7 @@
 				E4B64EEB7EE8D1639B5FB0B53122C846 /* PBXTargetDependency */,
 				61FDD41370DA6C04A952A9964BA6474A /* PBXTargetDependency */,
 				B86E75A665CCF917FB7E6F5A9ABCC0F5 /* PBXTargetDependency */,
+				902A71CF812A3980BA394522FA4E6C2F /* PBXTargetDependency */,
 				99F4157BCDE9172E030B2F63BBDA19B4 /* PBXTargetDependency */,
 				A1F912851C88949D8B618FAB6DB3CBAD /* PBXTargetDependency */,
 			);
@@ -3929,6 +3939,12 @@
 			name = GoogleUtilities;
 			target = 8D7F5D5DD528D21A72DC87ADA5B12E2D /* GoogleUtilities */;
 			targetProxy = 14DE8D7F53570AA9EB8916EC81FD0AC1 /* PBXContainerItemProxy */;
+		};
+		902A71CF812A3980BA394522FA4E6C2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoogleUtilities;
+			target = 8D7F5D5DD528D21A72DC87ADA5B12E2D /* GoogleUtilities */;
+			targetProxy = A16D825FCC3230EA4D8E5ECCC55CD32D /* PBXContainerItemProxy */;
 		};
 		99F4157BCDE9172E030B2F63BBDA19B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
