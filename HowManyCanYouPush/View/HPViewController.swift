@@ -5,11 +5,12 @@
 //  Created by Narumi Nogawa on 2020/11/03.
 //
 
+import GoogleMobileAds
+
+import AppTrackingTransparency
 import AVFoundation
 import UIKit
 import GameKit
-
-import GoogleMobileAds
 
 // MARK: - スタート画面＝PUSHボタン画面クラス
 class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstitialDelegate*/ {
@@ -50,6 +51,13 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.gameHelper.authenticateLocalPlayer(_self: self)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in })
+        }
     }
     
     override func viewWillTransition(to size: CGSize,
