@@ -91,7 +91,12 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
     }
     
     @IBAction private func rankingButtonTapped(_ sender: Any) {
-        self.gameHelper.showRanking(_self: self)
+        self.gameHelper.showRanking(
+            _self: self,
+            completion: {
+                self.showInterstitialAd()
+            }
+        )
     }
     // MARK: - プライベート関数
     
