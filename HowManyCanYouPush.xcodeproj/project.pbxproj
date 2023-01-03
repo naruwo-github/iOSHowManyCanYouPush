@@ -461,6 +461,7 @@
 				CURRENT_PROJECT_VERSION = 1.8.4;
 				DEVELOPMENT_TEAM = UMBT5JZV43;
 				INFOPLIST_FILE = HowManyCanYouPush/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -484,6 +485,7 @@
 				CURRENT_PROJECT_VERSION = 1.8.4;
 				DEVELOPMENT_TEAM = UMBT5JZV43;
 				INFOPLIST_FILE = HowManyCanYouPush/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
