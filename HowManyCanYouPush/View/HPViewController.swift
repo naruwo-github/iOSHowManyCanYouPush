@@ -134,11 +134,9 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
     private func showInterstitialAd() {
         let counter = UserDefaults.standard.integer(forKey: self.interstitialKey)
         if counter == 5 {
-            UserDefaults.standard.set(0, forKey: self.interstitialKey)
+            UserDefaults.standard.set(1, forKey: self.interstitialKey)
             if self.interstitial != nil {
                 self.interstitial!.present(fromRootViewController: self)
-            } else {
-                print("Ad wasn't ready")
             }
         } else {
             UserDefaults.standard.set(counter + 1, forKey: self.interstitialKey)
@@ -196,38 +194,6 @@ class HPViewController: UIViewController, GADBannerViewDelegate/*, GADInterstiti
             AudioServicesPlaySystemSound(soundID)
         }
     }
-    
-//    // Tells the delegate an ad request succeeded.
-//    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
-//      print("interstitialDidReceiveAd")
-//    }
-//
-//    // Tells the delegate an ad request failed.
-//    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
-//      print("interstitial:didFailToReceiveAdWithError: \(error.localizedDescription)")
-//    }
-//
-//    // Tells the delegate that an interstitial will be presented.
-//    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
-//      print("interstitialWillPresentScreen")
-//    }
-//
-//    // Tells the delegate the interstitial is to be animated off the screen.
-//    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
-//      print("interstitialWillDismissScreen")
-//    }
-//
-//    // Tells the delegate the interstitial had been animated off the screen.
-//    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-//      print("interstitialDidDismissScreen")
-//    }
-//
-//    // Tells the delegate that a user click will open another app
-//    // (such as the App Store), backgrounding the current app.
-//    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
-//      print("interstitialWillLeaveApplication")
-//    }
-    
 }
 
 // MARK: - Game Center画面の関数を扱うための拡張
