@@ -69,7 +69,7 @@ class HPResultModalViewController: UIViewController, GADBannerViewDelegate {
     
     @IBAction private func rankingButtonTapped(_ sender: Any) {
         self.gameHelper.sendLeaderboard(rate: Int64(self.tappedCount), _self: self)
-        self.gameHelper.showRanking(_self: self)
+        self.gameHelper.showRanking(_self: self, completion: nil)
     }
     
     @IBAction private func shareButtonTapped(_ sender: Any) {

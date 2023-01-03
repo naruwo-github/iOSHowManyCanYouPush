@@ -27,11 +27,11 @@ final class HPGameCenterHelper {
     }
     
     // ランキング画面を表示する
-    func showRanking(_self: UIViewController) {
+    func showRanking(_self: UIViewController, completion: (() -> Void)?) {
         let gcView = GKGameCenterViewController()
         gcView.gameCenterDelegate = _self as? GKGameCenterControllerDelegate
         gcView.viewState = GKGameCenterViewControllerState.leaderboards
-        _self.present(gcView, animated: true, completion: nil)
+        _self.present(gcView, animated: true, completion: completion)
     }
     
     // 最高スコアを送信する
